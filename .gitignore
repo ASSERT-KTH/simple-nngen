@@ -1,0 +1,11 @@
+# Eclipse
+.settings/
+.project/
+.classpath
+.externalToolBuilders/
+maven-eclipse.xml
+
+# Python
+.project
+.pydevproject
+__pycache__/

@@ -1,0 +1,3 @@
+including_nngen: BLEU = 16.53, 27.8/17.3/13.8/12.1 (BP=0.982, ratio=0.983, hyp_len=17164, ref_len=17469)
+excluding_nngen: BLEU = 3.39, 12.2/3.8/2.5/1.9 (BP=0.880, ratio=0.886, hyp_len=15486, ref_len=17469)
+nngen: BLEU = 16.41, 27.6/16.8/13.4/11.7 (BP=1.000, ratio=1.004, hyp_len=17546, ref_len=17469)
