@@ -15,12 +15,12 @@ def load_data(path):
     lines = [l.strip() for l in lines]
     return lines
 
-
 def find_mixed_nn(simi, diffs, test_diff, bleu_thre :int =5) -> int:
     """Find the nearest neighbor using cosine simialrity and bleu score"""
     candidates = simi.argsort()[-bleu_thre:][::-1]
     max_score = 0
     max_idx = -1
+    cnt = 0
     for j in candidates:
         if simi[j] < 0:
             return max_idx
@@ -28,6 +28,7 @@ def find_mixed_nn(simi, diffs, test_diff, bleu_thre :int =5) -> int:
         if score > max_score:
             max_score = score
             max_idx = j
+        cnt = cnt + 1
     return max_idx
 
 def nngen(train_diffs :List[str], train_msgs :List[str], test_diffs :List[str],
@@ -73,33 +74,47 @@ def main(train_diff_file :str, train_msg_file :str, train_repos_file :str,
     start_time = time.time()
     test_dirname = os.path.dirname(test_diff_file)
     test_basename = os.path.basename(test_diff_file)
-    out_file =  "./nngen." + test_basename.replace('.diff', '.msg')
-    exc_out_file =  "./exc_nngen." + test_basename.replace('.diff', '.msg')
-    inc_out_file =  "./inc_nngen." + test_basename.replace('.diff', '.msg')
-    out_repos_file =  "./nngen." + test_basename.replace('.diff', '.repos')
-    exc_out_repos_file =  "./exc_nngen." + test_basename.replace('.diff', '.repos')
-    inc_out_repos_file =  "./inc_nngen." + test_basename.replace('.diff', '.repos')
     
     train_diffs = load_data(train_diff_file)
     train_msgs = load_data(train_msg_file)
     train_repos = load_data(train_repos_file)
     test_diffs = load_data(test_diff_file)
     test_repos = load_data(test_repos_file)
+    
+    inc_full_out_repos_file =  "./inc_full_nngen." + test_basename.replace('.diff', '.repos')
+    inc_out_repos_file =  "./inc_nngen." + test_basename.replace('.diff', '.repos')
+    exc_out_repos_file =  "./exc_nngen." + test_basename.replace('.diff', '.repos')
+    out_repos_file =  "./nngen." + test_basename.replace('.diff', '.repos')
+    
+    inc_full_out_file =  "./inc_full_nngen." + test_basename.replace('.diff', '.msg')
+    inc_full_out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos, 'inc', 1000)
+    with open(inc_full_out_file, 'w') as out_f:
+        out_f.write("\n".join(inc_full_out_res[0]) + "\n")
+    with open(inc_full_out_repos_file, 'w') as out_f:
+        out_f.write("\n".join(inc_full_out_res[1]) + "\n")
+        
+    inc_out_file =  "./inc_nngen." + test_basename.replace('.diff', '.msg')
     inc_out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos, 'inc')
+    with open(inc_out_file, 'w') as out_f:
+        out_f.write("\n".join(inc_out_res[0]) + "\n")
+    with open(inc_out_repos_file, 'w') as out_f:
+        out_f.write("\n".join(inc_out_res[1]) + "\n")
+    
     exc_out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos, 'exc')
+    exc_out_file =  "./exc_nngen." + test_basename.replace('.diff', '.msg')
+    with open(exc_out_file, 'w') as out_f:
+        out_f.write("\n".join(exc_out_res[0]) + "\n")
+    with open(exc_out_repos_file, 'w') as out_f:
+        out_f.write("\n".join(exc_out_res[1]) + "\n")
+    
+    out_file =  "./nngen." + test_basename.replace('.diff', '.msg')
     out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos)
     with open(out_file, 'w') as out_f:
         out_f.write("\n".join(out_res[0]) + "\n")
-    with open(exc_out_file, 'w') as out_f:
-        out_f.write("\n".join(exc_out_res[0]) + "\n")
-    with open(inc_out_file, 'w') as out_f:
-        out_f.write("\n".join(inc_out_res[0]) + "\n")
     with open(out_repos_file, 'w') as out_f:
         out_f.write("\n".join(out_res[1]) + "\n")
-    with open(exc_out_repos_file, 'w') as out_f:
-        out_f.write("\n".join(exc_out_res[1]) + "\n")
-    with open(inc_out_repos_file, 'w') as out_f:
-        out_f.write("\n".join(inc_out_res[1]) + "\n")
+    
+    
     time_cost = time.time() -start_time
     print("Done, cost {}s".format(time_cost))
 
@@ -132,6 +147,27 @@ def main(train_diff_file :str, train_msg_file :str, train_repos_file :str,
         if exc_repos[i] == test_repos[i] and exc_repos[i] != 'UNKNOWN':
             cnt = cnt + 1
     print ("Number of known exc_nngen repos similar to the test repos: " + str(cnt))
+
+def compute_bleu_scores():
+    nngen_repos = load_data("./files/data/nngen.test.repos")
+    test_repos = load_data("./files/data/test.projectIds")
+    nngen_msgs = load_data("./files/data/nngen.test.msg")
+    test_msgs = load_data("./files/data/test.msg")
+    same_repo_cnt = 0
+    same_bleu_sum = 0
+    different_repo_cnt = 0
+    different_bleu_sum = 0
+    for i in range(len(nngen_msgs)):
+        bleu = sentence_bleu([nngen_msgs[i].split()], test_msgs[i].split())
+        if nngen_repos[i] == test_repos[i]:
+            same_repo_cnt = same_repo_cnt + 1
+            same_bleu_sum = same_bleu_sum + bleu
+        else:
+            different_repo_cnt = different_repo_cnt + 1
+            different_bleu_sum = different_bleu_sum + bleu
+    print("avg bleu for messages selected from the same,different repos: " 
+          + str(same_bleu_sum / same_repo_cnt) + "," 
+          + str(different_bleu_sum / different_repo_cnt))
 
 if __name__ == "__main__":
     fire.Fire({
