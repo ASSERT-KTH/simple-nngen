@@ -87,7 +87,7 @@ def main(train_diff_file :str, train_msg_file :str, train_repos_file :str,
     out_repos_file =  "./nngen." + test_basename.replace('.diff', '.repos')
     
     inc_full_out_file =  "./inc_full_nngen." + test_basename.replace('.diff', '.msg')
-    inc_full_out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos, 'inc', 1000)
+    inc_full_out_res = nngen(train_diffs, train_msgs, test_diffs, train_repos, test_repos, 'inc', len(train_diffs))
     with open(inc_full_out_file, 'w') as out_f:
         out_f.write("\n".join(inc_full_out_res[0]) + "\n")
     with open(inc_full_out_repos_file, 'w') as out_f:

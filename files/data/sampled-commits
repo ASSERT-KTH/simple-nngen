@@ -1,0 +1,1523 @@
+Each three consecutive lines present a (diff, message, predicted repository address).
+The first 30 samples are manually checked and only 10th was labeled as incorrectly predicated.
+
+mmm a / modules / jquery / src / main / webapp / jquery / jquery . atmosphere . js <nl> ppp b / modules / jquery / src / main / webapp / jquery / jquery . atmosphere . js <nl> jQuery . atmosphere = function ( ) { <nl> update = false ; <nl> } <nl> + var responseText = ajaxRequest . responseText ; <nl> if ( update ) { <nl> / / Do not fail on trying to retrieve headers . Chrome migth fail with <nl>
+Fix regression ( this line must never been deleted
+https://github.com/Atmosphere/atmosphere.git
+
+mmm a / www / project_tools . html <nl> ppp b / www / project_tools . html <nl> - - > <nl> < script > <nl> var info = { <nl> - title : " SIP Communicator " , <nl> + title : " SIP Communicator - the Java VoIP and Instant Messaging Client " , <nl> logo : " " <nl> } <nl> < / script > <nl>
+changed title
+https://github.com/jitsi/jitsi.git
+
+mmm a / app / build . gradle <nl> ppp b / app / build . gradle <nl> android { <nl> proguardFiles getDefaultProguardFile ( ' proguard - android . txt ' ) , ' proguard - rules . txt ' <nl> } <nl> } <nl> + lintOptions { <nl> + abortOnError false <nl> + } <nl> } <nl> dependencies { <nl>
+Add lintOptions in build . gradle
+https://github.com/stormzhang/9GAG.git
+
+mmm a / community / src / java / org / neo4j / impl / shell / NeoApp . java <nl> ppp b / community / src / java / org / neo4j / impl / shell / NeoApp . java <nl> public abstract class NeoApp extends AbstractApp <nl> { <nl> return this . name ; <nl> } <nl> + <nl> + @ Override <nl> + public String toString ( ) <nl> + { <nl> + return name ( ) ; <nl> + } <nl> } <nl> } <nl>
+Added toString ( ) method in NeoApp . NeoAppRelationshipType . . . otherwise
+https://github.com/neo4j/neo4j.git
+
+mmm a / source / com / intellij / openapi / vcs / readOnlyHandler / ReadonlyStatusHandlerImpl . java <nl> ppp b / source / com / intellij / openapi / vcs / readOnlyHandler / ReadonlyStatusHandlerImpl . java <nl> import java . util . List ; <nl> public class ReadonlyStatusHandlerImpl extends ReadonlyStatusHandler implements ProjectComponent , JDOMExternalizable { <nl> private final Project myProject ; <nl> - public boolean SHOW_DIALOG ; <nl> + public boolean SHOW_DIALOG = true ; <nl> public ReadonlyStatusHandlerImpl ( Project project ) { <nl> myProject = project ; <nl>
+ReadonlyStatusHandler should show a confirmation dialog by default .
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / portal - service / src / com / liferay / portal / kernel / jsonwebservice / JSONWebServiceActionMapping . java <nl> ppp b / portal - service / src / com / liferay / portal / kernel / jsonwebservice / JSONWebServiceActionMapping . java <nl> public interface JSONWebServiceActionMapping { <nl> public Object getActionObject ( ) ; <nl> + public String getContextName ( ) ; <nl> + <nl> public String getContextPath ( ) ; <nl> public String getMethod ( ) ; <nl>
+LPS - 48469 add contextName to the interface
+https://github.com/liferay/liferay-portal.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> before_script : <nl> - adb shell input keyevent 82 & <nl> script : . / gradlew connectedAndroidTest - - info <nl> + . / gradlew lintVitalRelease <nl> # Coverity Scan Settings <nl> # - - - - - - - - - - - - - - - - - - - - - - - <nl>
+Added lintVitalRelease as suggested by @ DimaKoz
+https://github.com/CellularPrivacy/Android-IMSI-Catcher-Detector.git
+
+mmm a / LICENSE . txt <nl> ppp b / LICENSE . txt <nl> same " printed page " as the copyright notice for easier <nl> identification within third - party archives . <nl> - Copyright [ yyyy ] [ name of copyright owner ] <nl> + Copyright 2014 Jerzy Chalupski <nl> Licensed under the Apache License , Version 2 . 0 ( the " License " ) ; <nl> you may not use this file except in compliance with the License . <nl>
+Fill placeholders in LICENSE . txt
+https://github.com/futuresimple/android-floating-action-button.git
+
+deleted file mode 100644 <nl> index 565bd33ae370 . . 000000000000 <nl> Binary files a / portal - web / third - party / alloy - 2 . 0 . 0pr7 . zip and / dev / null differ <nl>
+LPS - 40766 - Remove alloy - 2 . 0 . 0pr7 . zip
+https://github.com/liferay/liferay-portal.git
+
+mmm a / Libraries / Utilities / mergeFast . js <nl> ppp b / Libraries / Utilities / mergeFast . js <nl> / * * <nl> * Faster version of ` merge ` that doesn ' t check its arguments and <nl> - * also merges prototye inherited properties . <nl> + * also merges prototype inherited properties . <nl> * <nl> * @ param { object } one Any non - null object . <nl> * @ param { object } two Any non - null object . <nl>
+Fix typo
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / core / java / android / provider / Settings . java <nl> ppp b / core / java / android / provider / Settings . java <nl> public final class Settings { <nl> DTMF_TONE_TYPE_WHEN_DIALING , <nl> HEARING_AID , <nl> TTY_MODE , <nl> + MASTER_MONO , <nl> SOUND_EFFECTS_ENABLED , <nl> HAPTIC_FEEDBACK_ENABLED , <nl> POWER_SOUNDS_ENABLED , / / moved to global <nl>
+Back up / restore the ' mono audio ' setting
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / community / browser / app / styles / main . styl <nl> ppp b / community / browser / app / styles / main . styl <nl> select <nl> position : absolute <nl> right : 0 <nl> text - align : center <nl> - text - shadow : 0 2px 0px # E7E9EB <nl> . update - button <nl> position : absolute <nl>
+Remove silly shadow
+https://github.com/neo4j/neo4j.git
+
+mmm a / singleton / src / main / java / com / iluwatar / ThreadSafeLazyLoadedIvoryTower . java <nl> ppp b / singleton / src / main / java / com / iluwatar / ThreadSafeLazyLoadedIvoryTower . java <nl> package com . iluwatar ; <nl> public class ThreadSafeLazyLoadedIvoryTower { <nl> private static ThreadSafeLazyLoadedIvoryTower instance = null ; <nl> + <nl> + private ThreadSafeLazyLoadedIvoryTower ( ) { <nl> + } <nl> public synchronized static ThreadSafeLazyLoadedIvoryTower getInstance ( ) { <nl> / * <nl>
+Added private constructor to ThreadSafeLazyLoadedIvoryTower .
+https://github.com/iluwatar/java-design-patterns.git
+
+mmm a / libs / hwui / OpenGLRenderer . cpp <nl> ppp b / libs / hwui / OpenGLRenderer . cpp <nl> void OpenGLRenderer : : drawTextureLayer ( Layer * layer , const Rect & rect ) { <nl> . setModelViewMapUnitToRectOptionalSnap ( snap , rect ) <nl> . setRoundRectClipState ( currentSnapshot ( ) - > roundRectClipState ) <nl> . build ( ) ; <nl> + renderGlop ( glop ) ; <nl> + return ; <nl> } <nl> float alpha = getLayerAlpha ( layer ) ; <nl>
+Fix glop usage for drawTextureLayer
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> * STORM - 1769 : Added a test to check local nimbus with notifier plugin <nl> # # 1 . 1 . 0 <nl> + * STORM - 2078 : enable paging in worker datatable <nl> * STORM - 1664 : Allow Java users to start a local cluster with a Nimbus Thrift server . <nl> * STORM - 1872 : Release Jedis connection when topology shutdown <nl> * STORM - 1837 : Fix complete - topology and prevent message loss <nl>
+add STORM - 2078 to CHANGELOG
+https://github.com/apache/storm.git
+
+mmm a / src / cpp / core / Backtrace . cpp <nl> ppp b / src / cpp / core / Backtrace . cpp <nl> # include < iostream > <nl> # include < boost / regex . hpp > <nl> # include < execinfo . h > <nl> + # include < cxxabi . h > <nl> # endif <nl> namespace rstudio { <nl>
+include ' < cxxabi . h > ' ( needed for non - OS X platforms )
+https://github.com/rstudio/rstudio.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < includeProjectDependencies > true < / includeProjectDependencies > <nl> < includePluginDependencies > true < / includePluginDependencies > <nl> < mainClass > org . adoptopenjdk . jitwatch . launch . LaunchUI < / mainClass > <nl> + < cleanupDaemonThreads > false < / cleanupDaemonThreads > <nl> < additionalClasspathElements > <nl> < additionalClasspathElement > src / main / resources < / additionalClasspathElement > <nl> < / additionalClasspathElements > <nl>
+prevent hang in maven - exec - plugin
+https://github.com/AdoptOpenJDK/jitwatch.git
+
+mmm a / lib / nokogiri / xml / document . rb <nl> ppp b / lib / nokogiri / xml / document . rb <nl> module Nokogiri <nl> # # # <nl> # Apply any decorators to + node + <nl> def decorate node <nl> - @ document | | = self <nl> return unless @ decorators <nl> @ decorators . each { | klass , list | <nl> next unless node . is_a ? ( klass ) <nl>
+shit , accidentally committed some experimental code .
+https://github.com/sparklemotion/nokogiri.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> atlassian - ide - plugin . xml <nl> # Work dirs <nl> # - - - - - - - - - <nl> - / buildSrc / lib <nl> / incoming - distributions <nl> / intTestHomeDir <nl>
+Remove ' buildSrc / lib ' entry from .
+https://github.com/gradle/gradle.git
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> org . gradle . daemon = true <nl> org . gradle . parallel = true <nl> # Maven stuff <nl> - VERSION_NAME = 4 . 0 . 0 . b7 - SNAPSHOT <nl> + VERSION_NAME = 4 . 0 . 0 . rc1 - SNAPSHOT <nl> VERSION_CODE = 400 <nl> GROUP = com . mikepenz <nl>
+build new pre release - > RC 1
+https://github.com/mikepenz/MaterialDrawer.git
+
+new file mode 100644 <nl> index 000000000000 . . f4f1eb57007e <nl> mmm / dev / null <nl> ppp b / modules / portal - portlet - bridge / build . xml <nl> + < ? xml version = " 1 . 0 " ? > <nl> + < ! DOCTYPE project > <nl> + <nl> + < project > <nl> + < import file = " . . / build - module . xml " / > <nl> + < / project > <nl> \ No newline at end of file <nl>
+LPS - 63247 Add build . xml
+https://github.com/liferay/liferay-portal.git
+
+Binary files a / assets / Xposed - Disabler - Recovery . zip and b / assets / Xposed - Disabler - Recovery . zip differ <nl>
+updated recovery . zip with better error handling
+https://github.com/rovo89/XposedInstaller.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 2 . 0 . 0 <nl> + * STORM - 1535 : Make sure hdfs key tab login happens only once for multiple components <nl> * STORM - 1544 : Document Debug / Sampling of Topologies <nl> * STORM - 1681 : Bug in scheduling cyclic topologies when scheduling with RAS <nl> * STORM - 1679 : add storm Scheduler documents <nl>
+add STORM - 1535 to changelog
+https://github.com/apache/storm.git
+
+mmm a / modules / apps / collaboration / directory / directory - web / bnd . bnd <nl> ppp b / modules / apps / collaboration / directory / directory - web / bnd . bnd <nl> Bundle - Name : Liferay Directory Web <nl> Bundle - SymbolicName : com . liferay . directory . web <nl> - Bundle - Version : 1 . 0 . 4 <nl> \ No newline at end of file <nl> + Bundle - Version : 1 . 0 . 5 <nl> \ No newline at end of file <nl>
+ignore directory - web 1 . 0 . 4 prep next
+https://github.com/liferay/liferay-portal.git
+
+mmm a / src / main / java / com / sk89q / wepif / PermissionsResolverManager . java <nl> ppp b / src / main / java / com / sk89q / wepif / PermissionsResolverManager . java <nl> public class PermissionsResolverManager implements PermissionsResolver { <nl> public void load ( ) { <nl> findResolver ( ) ; <nl> - permissionResolver . load ( ) ; <nl> } <nl> public boolean hasPermission ( String name , String permission ) { <nl>
+Removed redundant PermissionsResolver . load ( ) call
+https://github.com/sk89q/WorldEdit.git
+
+mmm a / servers / src / main / java / tachyon / master / filesystem / meta / InodeFile . java <nl> ppp b / servers / src / main / java / tachyon / master / filesystem / meta / InodeFile . java <nl> public final class InodeFile extends Inode { <nl> getNewBlockId ( ) ; <nl> length - = blockSize ; <nl> } <nl> - setComplete ( length ) ; <nl> + setComplete ( mLength ) ; <nl> } <nl> @ Override <nl>
+Fix bug in setLength
+https://github.com/Alluxio/alluxio.git
+
+mmm a / src / main / org / codehaus / groovy / classgen / AsmClassGenerator . java <nl> ppp b / src / main / org / codehaus / groovy / classgen / AsmClassGenerator . java <nl> public class AsmClassGenerator extends ClassGenerator { <nl> Variable variable = compileStack . getVariable ( variableName , false ) ; <nl> - VariableScope scope = compileStack . getScope ( ) ; <nl> if ( variable = = null ) { <nl> processClassVariable ( variableName ) ; <nl> } else { <nl>
+Remove unused local variable
+https://github.com/apache/groovy.git
+
+mmm a / compiler / integration - tests / testData / compileAndRunModule / Smoke . kts <nl> ppp b / compiler / integration - tests / testData / compileAndRunModule / Smoke . kts <nl> import kotlin . modules . * <nl> fun project ( ) { <nl> - module ( " smoke " ) { <nl> + module ( " smoke " , " . " ) { <nl> sources + = " Smoke . kt " <nl> } <nl> } <nl>
+Fix smoke test
+https://github.com/JetBrains/kotlin.git
+
+mmm a / h2o - web / build . gradle <nl> ppp b / h2o - web / build . gradle <nl> compileAndInstallDocFiles . dependsOn " : h2o - docs : build " <nl> build . dependsOn compileAndInstallDocFiles <nl> / / Hook clean stage <nl> - clean . dependsOn deleteFlowFromWebRoot , deleteBowerModules , deleteNodeModules , cleanUpSmokeTest , deleteGenModelJarFromWebRoot , deleteDocFiles <nl> + clean . dependsOn deleteFlowFromWebRoot , cleanUpSmokeTest , deleteGenModelJarFromWebRoot , deleteDocFiles <nl>
+Do not remove node / bower modules on gradle - clean
+https://github.com/h2oai/h2o-3.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> build / <nl> * . setting <nl> bin / <nl> * . iml <nl> + . idea / * <nl>
+ignoring IdeaJ plugin struct
+https://github.com/iBotPeaches/Apktool.git
+
+Binary files a / OsmAnd / res / drawable - hdpi / list_activities_set_destination . png and b / OsmAnd / res / drawable - hdpi / list_activities_set_destination . png differ <nl> Binary files a / OsmAnd / res / drawable - hdpi / list_activities_set_intermediate . png and b / OsmAnd / res / drawable - hdpi / list_activities_set_intermediate . png differ <nl>
+Add set target temporary
+https://github.com/osmandapp/Osmand.git
+
+mmm a / res / layout / folder_list_item . xml <nl> ppp b / res / layout / folder_list_item . xml <nl> < LinearLayout <nl> android : layout_width = " fill_parent " <nl> - android : layout_height = " fill_parent " <nl> + android : layout_height = " wrap_content " <nl> android : layout_weight = " 1 " <nl> android : orientation = " vertical " <nl> android : gravity = " center_vertical " <nl>
+Permit the folder list item to expand vertically .
+https://github.com/k9mail/k-9.git
+
+mmm a / subprojects / build - scan - performance / build - scan - performance . gradle <nl> ppp b / subprojects / build - scan - performance / build - scan - performance . gradle <nl> dependencies { <nl> } <nl> useClassycle ( ) <nl> + <nl> + performanceAdhocTest . enabled = false <nl>
+Disable perf ad - hoc tests for build scans
+https://github.com/gradle/gradle.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # v0 . 2 <nl> + 1 . Show loading progressBar upon the blurry image <nl> + 2 . Improve sample code for other developers <nl> + <nl> + # # v0 . 1 <nl> 1 . Support display the loading progress and customize the progressView style2 . Improve the sample <nl>
+add changelog for v0 . 2
+https://github.com/wingjay/BlurImageView.git
+
+mmm a / docs / source / manual / hibernate . rst <nl> ppp b / docs / source / manual / hibernate . rst <nl> subclass : <nl> } <nl> @ Override <nl> - public void bootstrap ( Bootstrap < ExampleConfiguration > bootstrap ) { <nl> + public void initialize ( Bootstrap < ExampleConfiguration > bootstrap ) { <nl> bootstrap . addBundle ( hibernateBundle ) ; <nl> } <nl>
+Fix the docs .
+https://github.com/dropwizard/dropwizard.git
+
+mmm a / servers / src / proto / journal / key_value . proto <nl> ppp b / servers / src / proto / journal / key_value . proto <nl> + syntax = " proto2 " ; <nl> + <nl> package tachyon . proto . journal ; <nl> / / Journal entry messages for the key - value master . <nl>
+Add proto syntax to key_value .
+UNKNOWN
+
+new file mode 100644 <nl> index 0000000 . . b96d4a4 <nl> mmm / dev / null <nl> ppp b / OSSMETADATA <nl> + osslifecycle = active <nl>
+adding OSSMETADATA for NetflixOSS tracking
+https://github.com/Netflix/astyanax.git
+
+mmm a / project / plugins . sbt <nl> ppp b / project / plugins . sbt <nl> import Keys . _ <nl> / / Comment to get more information during initialization <nl> - logLevel : = Level . Debug <nl> + logLevel : = Level . Info <nl> / / The Typesafe repository <nl> resolvers + = " Typesafe repository " at " http : / / repo . typesafe . com / typesafe / releases / " <nl>
+Reset log level to info
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / h2o - docs / src / product / flow / packs / index . list <nl> ppp b / h2o - docs / src / product / flow / packs / index . list <nl> examples <nl> - test <nl>
+Updated index
+https://github.com/h2oai/h2o-3.git
+
+mmm a / todo . txt <nl> ppp b / todo . txt <nl> X Linux version of updated icon <nl> X handled with the . desktop file , nothing has changed for the file location <nl> X add larger icons to core folder <nl> X update export icons in java / application ( export . icns and export . ico ) <nl> + X remove no longer used ' pdex ' directory <nl> fixed earlier <nl> X Can ' t set Breakpoint from the Breakpoint bar at the side <nl>
+remove no longer used ' pdex ' directory
+https://github.com/processing/processing.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> * * / . project <nl> * * / . settings <nl> * * / . gitignore <nl> - * * / * . iml <nl> - . idea / * <nl> + * . iml <nl> . java - version <nl>
+Add util and .
+https://github.com/google/error-prone.git
+
+mmm a / test / org / apache / catalina / startup / SimpleHttpClient . java <nl> ppp b / test / org / apache / catalina / startup / SimpleHttpClient . java <nl> public abstract class SimpleHttpClient { <nl> private String responseBody ; <nl> private List < String > bodyUriElements = null ; <nl> - protected void setPort ( int thePort ) { <nl> + public void setPort ( int thePort ) { <nl> port = thePort ; <nl> } <nl>
+Make this public to expand how the class can be used for unit tests .
+https://github.com/apache/tomcat.git
+
+mmm a / python / helpers / tools / stdlib_packages . txt <nl> ppp b / python / helpers / tools / stdlib_packages . txt <nl> + abc <nl> aifc <nl> antigravity <nl> anydbm <nl>
+Added ' abc ' to stdlib packages list ( PY - 5935 )
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> POM_NAME = Dexter <nl> POM_ARTIFACT_ID = dexter <nl> POM_PACKAGING = aar <nl> - VERSION_NAME = 2 . 1 . 3 - SNAPSHOT <nl> + VERSION_NAME = 2 . 1 . 3 <nl> VERSION_CODE = 200004 <nl> GROUP = com . karumi <nl>
+Prepare library for release 2 . 1 . 3
+https://github.com/Karumi/Dexter.git
+
+new file mode 100644 <nl> index 000000000 . . 177997e43 <nl> Binary files / dev / null and b / FiltersUI / src / org / gephi / ui / filters / resources / hideColumn . png differ <nl> new file mode 100644 <nl> index 000000000 . . 9ee506e88 <nl> Binary files / dev / null and b / ProjectImpl / src / org / gephi / io / project / icon16 . png differ <nl>
+Missing Icon files .
+https://github.com/gephi/gephi.git
+
+mmm a / modules / activiti - engine / pom . xml <nl> ppp b / modules / activiti - engine / pom . xml <nl> < plugin > <nl> < artifactId > maven - surefire - plugin < / artifactId > <nl> < configuration > <nl> - < encoding > UTF - 8 < / encoding > <nl> < excludes > <nl> < exclude > * * / * TestCase . java < / exclude > <nl>
+Removing invalid UTF 8 setting from pom . xml
+https://github.com/Activiti/Activiti.git
+
+Binary files a / gradle / wrapper / gradle - wrapper . jar and b / gradle / wrapper / gradle - wrapper . jar differ <nl>
+regenerate gradle - wrapper . jar with 1 . 9 - rc - 4
+https://github.com/grails/grails-core.git
+
+mmm a / library / src / main / res / values - en / strings . xml <nl> ppp b / library / src / main / res / values - en / strings . xml <nl> < resources > <nl> - < string name = " app_name " > Library < / string > <nl> < string name = " loading " > Loading . . . < / string > <nl> < / resources > <nl>
+rm en strings = > app_name
+UNKNOWN
+
+mmm a / core / res / res / layout / preference_widget_switch . xml <nl> ppp b / core / res / res / layout / preference_widget_switch . xml <nl> android : layout_width = " wrap_content " <nl> android : layout_height = " wrap_content " <nl> android : focusable = " false " <nl> + android : clickable = " false " <nl> android : background = " @ null " / > <nl>
+Prevent SwitchPreference widget from receiving a11y focus
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> pom . xml . tag <nl> pom . xml . releaseBackup <nl> pom . xml . versionsBackup <nl> pom . xml . next <nl> + dependency - reduced - pom . xml <nl> release . properties <nl> # Other <nl>
+Don ' t track dependency - reduced - pom .
+https://github.com/ata4/disunity.git
+
+deleted file mode 100644 <nl> index 5301cbc5a . . 000000000 <nl> Binary files a / docs / H2O_AlgorithmsRoadMap . docx and / dev / null differ <nl> deleted file mode 100644 <nl> index 73a6a6cbc . . 000000000 <nl> Binary files a / docs / H2O_AlgorithmsRoadMap . pdf and / dev / null differ <nl> deleted file mode 100644 <nl> index 34e1e1f1a . . 000000000 <nl> Binary files a / docs / REST - API . docx and / dev / null differ <nl> deleted file mode 100644 <nl> index c9e80910f . . 000000000 <nl> Binary files a / docs / REST - API . pdf and / dev / null differ <nl>
+deleting older docs
+https://github.com/h2oai/h2o-2.git
+
+mmm a / test / com / facebook / buck / java / intellij / BUCK <nl> ppp b / test / com / facebook / buck / java / intellij / BUCK <nl> java_test ( <nl> - name = ' java ' , <nl> + name = ' intellij ' , <nl> srcs = glob ( [ ' * . java ' ] ) , <nl> deps = [ <nl> ' / / src / com / facebook / buck / android : packageable ' , <nl>
+Rename a test rule
+https://github.com/facebook/buck.git
+
+mmm a / src / main / java / com / jayway / maven / plugins / android / standalonemojos / UnpackMojo . java <nl> ppp b / src / main / java / com / jayway / maven / plugins / android / standalonemojos / UnpackMojo . java <nl> public class UnpackMojo extends AbstractAndroidMojo <nl> } <nl> else <nl> { <nl> + outputDirectory . mkdirs ( ) ; <nl> + <nl> for ( Artifact artifact : getRelevantCompileArtifacts ( ) ) <nl> { <nl>
+automatically create outputDirectory
+https://github.com/simpligility/android-maven-plugin.git
+
+mmm a / core / tests / coretests / apks / install_jni_lib_open_from_apk / Android . mk <nl> ppp b / core / tests / coretests / apks / install_jni_lib_open_from_apk / Android . mk <nl> LOCAL_SRC_FILES : = $ ( call all - subdir - java - files ) <nl> LOCAL_PACKAGE_NAME : = install_jni_lib_open_from_apk <nl> - LOCAL_JNI_SHARED_LIBRARIES_ZIP_OPTIONS : = - 0 <nl> LOCAL_PAGE_ALIGN_JNI_SHARED_LIBRARIES : = true <nl> include $ ( FrameworkCoreTests_BUILD_PACKAGE ) <nl>
+Remove LOCAL_JNI_SHARED_LIBRARIES_ZIP_OPTIONS
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> subprojects { <nl> project . ext { <nl> guavaVersion = ' 19 . 0 ' <nl> nettyVersion = ' 4 . 0 . 35 . Final ' <nl> - slf4jVersion = ' 1 . 7 . 19 ' <nl> + slf4jVersion = ' 1 . 7 . 20 ' <nl> commonsIoVersion = ' 2 . 4 ' <nl> jacksonVersion = ' 2 . 7 . 3 ' <nl> junitVersion = ' 4 . 12 ' <nl>
+upgraded slf4j to 1 . 7 . 20
+https://github.com/dreamhead/moco.git
+
+mmm a / rest - api - spec / api / ping . json <nl> ppp b / rest - api - spec / api / ping . json <nl> { <nl> - " info " : { <nl> + " ping " : { <nl> " documentation " : " http : / / www . elasticsearch . org / guide / " , <nl> " methods " : [ " HEAD " ] , <nl> " url " : { <nl>
+Fixed bad name in ping . json
+https://github.com/elastic/elasticsearch.git
+
+mmm a / js / js . translator / testFiles / stdlib / cases / browserDocumentAccess . kt <nl> ppp b / js / js . translator / testFiles / stdlib / cases / browserDocumentAccess . kt <nl> fun foo ( ) : String { <nl> if ( element ! = null ) { <nl> element . appendChild ( document . createTextNode ( " Some Dynamically Created Content ! ! ! " ) ) <nl> } <nl> - return element . getTextContent ( ) <nl> + return element . textContent <nl> } <nl>
+fixed a test case
+https://github.com/JetBrains/kotlin.git
+
+mmm a / requery - android / build . gradle <nl> ppp b / requery - android / build . gradle <nl> android { <nl> sourceCompatibility JavaVersion . VERSION_1_7 <nl> targetCompatibility JavaVersion . VERSION_1_7 <nl> } <nl> - <nl> - dataBinding { <nl> - enabled = true <nl> - } <nl> } <nl> dependencies { <nl>
+Remove unnecessary databinding enabled
+https://github.com/requery/requery.git
+
+mmm a / android / playground / app / build . gradle <nl> ppp b / android / playground / app / build . gradle <nl> android { <nl> versionName " 0 . 5 . 2 . 3 " <nl> testInstrumentationRunner " android . support . test . runner . AndroidJUnitRunner " <nl> ndk { <nl> - abiFilters " armeabi - v7a " <nl> abiFilters " x86 " <nl> abiFilters " armeabi " <nl> } <nl>
+update adbiFilters
+https://github.com/alibaba/weex.git
+
+mmm a / src / cpp / session / modules / tex / SessionCompilePdf . cpp <nl> ppp b / src / cpp / session / modules / tex / SessionCompilePdf . cpp <nl> / / TOOD : add support for multiple concordance entries written to file <nl> / / TODO : pgfSweave concordance <nl> + / / TODO : knitr concordance <nl> using namespace core ; <nl>
+update todos
+https://github.com/rstudio/rstudio.git
+
+mmm a / Library / src / com / tonicartos / widget / stickygridheaders / StickyGridHeadersGridView . java <nl> ppp b / Library / src / com / tonicartos / widget / stickygridheaders / StickyGridHeadersGridView . java <nl> public class StickyGridHeadersGridView extends GridView implements OnScrollListe <nl> mAreHeadersSticky = a . getBoolean ( attr , true ) ; <nl> } <nl> } <nl> + a . recycle ( ) ; <nl> ViewConfiguration vc = ViewConfiguration . get ( context ) ; <nl> mTouchSlop = vc . getScaledTouchSlop ( ) ; <nl>
+Recycle style attributes typed array .
+https://github.com/TonicArtos/StickyGridHeaders.git
+
+mmm a / actor - server / version . sbt <nl> ppp b / actor - server / version . sbt <nl> - version in ThisBuild : = " 1 . 0 . 106 - SNAPSHOT " <nl> \ No newline at end of file <nl> + version in ThisBuild : = " 1 . 0 . 106 " <nl> \ No newline at end of file <nl>
+setting version to 1 . 0 . 106
+https://github.com/actorapp/actor-platform.git
+
+mmm a / cachecloud - open - web / src / main / resources / application . properties <nl> ppp b / cachecloud - open - web / src / main / resources / application . properties <nl> application . message = CacheCloud <nl> sentinel . host . list = $ { sentinel . host . list } <nl> server . port = $ { web . port } <nl> - server . sessionTimeout = 30 <nl> + server . sessionTimeout = 3600 <nl> server . contextPath = <nl> # tomcat config <nl>
+update sessiontimeout 3600 secs
+https://github.com/sohutv/cachecloud.git
+
+mmm a / UltimateAndroidGradle / build . gradle <nl> ppp b / UltimateAndroidGradle / build . gradle <nl> buildscript { <nl> allprojects { <nl> repositories { <nl> jcenter ( ) <nl> + mavenCentral ( ) <nl> } <nl> } <nl>
+add MavenCentrail ( ) in allprojects of build . gradle
+https://github.com/cymcsg/UltimateAndroid.git
+
+mmm a / common / src / main / java / tachyon / worker / WorkerClient . java <nl> ppp b / common / src / main / java / tachyon / worker / WorkerClient . java <nl> public final class WorkerClient extends ClientBase { <nl> mIsLocal = isLocal ; <nl> mClientMetrics = Preconditions . checkNotNull ( clientMetrics ) ; <nl> mHeartbeatExecutor = new WorkerClientHeartbeatExecutor ( this ) ; <nl> - <nl> } <nl> / * * <nl>
+Remove unnecessary empty line
+https://github.com/Alluxio/alluxio.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> proguard / <nl> # Log Files <nl> * . log <nl> + # IntelliJ files <nl> * . iml <nl> - . idea / <nl> \ No newline at end of file <nl> + . idea / <nl>
+improve gitignore
+https://github.com/mikepenz/MaterialDrawer.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < / goals > <nl> < configuration > <nl> < source > <nl> + / / the purpose of this script is to make sure that <nl> + / / maven - source - plugin includes Groovy sources in source Jar <nl> project . addCompileSourceRoot ( " src / main / groovy " ) <nl> < / source > <nl> < / configuration > <nl>
+Source jars are missing sources for classes written in Groovy
+https://github.com/spockframework/spock.git
+
+new file mode 100644 <nl> index 00000000 . . a8ab6176 <nl> Binary files / dev / null and b / art / logo . png differ <nl>
+added rendered version of logo
+https://github.com/siacs/Conversations.git
+
+mmm a / portal - service / src / com / liferay / portlet / dynamicdatamapping / storage / Fields . java <nl> ppp b / portal - service / src / com / liferay / portlet / dynamicdatamapping / storage / Fields . java <nl> public class Fields implements Iterable < Field > , Serializable { <nl> return _fieldsMap . keySet ( ) ; <nl> } <nl> + @ Override <nl> public Iterator < Field > iterator ( ) { <nl> return iterator ( false ) ; <nl> } <nl>
+LPS - 34662 Add @ Override
+https://github.com/liferay/liferay-portal.git
+
+Binary files a / platform / icons / src / icon . png and b / platform / icons / src / icon . png differ <nl>
+optimize png
+https://github.com/JetBrains/intellij-community.git
+
+new file mode 100644 <nl> index 0000000 . . 7c1051a <nl> Binary files / dev / null and b / images / circle_thumbnail_minimal_solo . png differ <nl> new file mode 100644 <nl> index 0000000 . . 513733b <nl> Binary files / dev / null and b / images / circle_thumbnail_solo . png differ <nl>
+added wiki images
+https://github.com/Bearded-Hen/Android-Bootstrap.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> subprojects { <nl> apply plugin : " signing " <nl> sourceCompatibility = 1 . 5 <nl> - targetCompatibility = 1 . 5 <nl> repositories { <nl> mavenCentral ( ) <nl>
+removed redundant declaration
+https://github.com/spockframework/spock.git
+
+Binary files a / portal - web / third - party / alloy - 1 . 0 . 1 . zip and b / portal - web / third - party / alloy - 1 . 0 . 1 . zip differ <nl>
+Updating Alloy to f8014867 ; LPS - 18804
+https://github.com/liferay/liferay-portal.git
+
+Binary files a / gdx / libs / mac / libgdx . dylib and b / gdx / libs / mac / libgdx . dylib differ <nl>
+fixed mac natives
+https://github.com/libgdx/libgdx.git
+
+mmm a / core / java / android / webkit / FindActionModeCallback . java <nl> ppp b / core / java / android / webkit / FindActionModeCallback . java <nl> class FindActionModeCallback implements ActionMode . Callback , TextWatcher , <nl> mActiveMatchIndex = matchIndex ; <nl> updateMatchesString ( ) ; <nl> } else { <nl> - mMatches . setVisibility ( View . INVISIBLE ) ; <nl> + mMatches . setVisibility ( View . GONE ) ; <nl> mNumberOfMatches = 0 ; <nl> } <nl> } <nl>
+Fix for truncated sentence in " Find on Page " field
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / quasar - kotlin / build . gradle <nl> ppp b / quasar - kotlin / build . gradle <nl> buildscript { <nl> repositories { <nl> mavenCentral ( ) <nl> + maven { <nl> + url " https : / / oss . sonatype . org / content / repositories / snapshots " <nl> + } <nl> } <nl> dependencies { <nl> classpath ' org . jetbrains . kotlin : kotlin - gradle - plugin : 0 . 1 - SNAPSHOT ' <nl>
+Add kotlin - gradle - plugin snapshot repo
+https://github.com/puniverse/quasar.git
+
+mmm a / src / com / fsck / k9 / activity / MessageView . java <nl> ppp b / src / com / fsck / k9 / activity / MessageView . java <nl> public class MessageView extends K9Activity implements OnClickListener { <nl> | | ! mMessageReference . accountUuid . equals ( account . getUuid ( ) ) ) { <nl> return ; <nl> } <nl> - MessageView . this . mMessage = message ; <nl> / * <nl> * Clone the message object because the original could be modified by <nl>
+Keep current view state after having downloaded the complete message
+https://github.com/k9mail/k-9.git
+
+mmm a / packages / SystemUI / Android . mk <nl> ppp b / packages / SystemUI / Android . mk <nl> LOCAL_MODULE_TAGS : = optional <nl> LOCAL_SRC_FILES : = $ ( call all - java - files - under , src ) \ <nl> src / com / android / systemui / EventLogTags . logtags <nl> - LOCAL_JAVA_LIBRARIES : = services telephony - common <nl> + LOCAL_JAVA_LIBRARIES : = telephony - common <nl> LOCAL_PACKAGE_NAME : = SystemUI <nl> LOCAL_CERTIFICATE : = platform <nl>
+Remove unused services module dependency from sysui .
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / public / javascripts / analyzers . js <nl> ppp b / public / javascripts / analyzers . js <nl> $ ( document ) . ready ( function ( ) { <nl> break ; <nl> } <nl> - params [ " foo " ] = " bar " ; <nl> - <nl> $ . ajax ( { <nl> url : ' / a / search / fieldstats ' , <nl> data : params , <nl>
+remove debug line
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / src / checkstyle / com / puppycrawl / tools / checkstyle / grammars / java . g <nl> ppp b / src / checkstyle / com / puppycrawl / tools / checkstyle / grammars / java . g <nl> protected HEX_DOUBLE_LITERAL <nl> ; <nl> protected ELLIPSIS <nl> - : " . . " <nl> + : " . . . " <nl> ; <nl> protected DOT <nl>
+Fixed vararg parser typo .
+https://github.com/checkstyle/checkstyle.git
+
+mmm a / trunk / JLanguageTool / CHANGES . txt <nl> ppp b / trunk / JLanguageTool / CHANGES . txt <nl> LanguageTool Change Log <nl> - German : <nl> - several new rules <nl> - - updated compound splitter component to fix some agreement errors <nl> + - updated compound splitter component to fix some agreement errors ( jwordsplitter 3 . 3 ) <nl> - Khmer : <nl> - configuration of Khmer rules should now work in OpenOffice . org / LibreOffice <nl> - Breton : <nl>
+update compound splitter to version 3 . 3
+https://github.com/languagetool-org/languagetool.git
+
+mmm a / reactor / pom . xml <nl> ppp b / reactor / pom . xml <nl> < parent > <nl> < groupId > com . iluwatar < / groupId > <nl> < artifactId > java - design - patterns < / artifactId > <nl> - < version > 1 . 7 . 0 < / version > <nl> + < version > 1 . 6 . 0 < / version > <nl> < / parent > <nl> < artifactId > reactor < / artifactId > <nl> < dependencies > <nl>
+Fixed version number
+https://github.com/JoanZapata/android-iconify.git
+
+mmm a / AndroidManifest . xml <nl> ppp b / AndroidManifest . xml <nl> < supports - screens <nl> android : largeScreens = " true " <nl> android : normalScreens = " true " <nl> - android : smallScreens = " false " <nl> + android : smallScreens = " true " <nl> android : xlargeScreens = " true " android : anyDensity = " true " / > <nl> < application <nl>
+Enabled support for small screens
+https://github.com/AntennaPod/AntennaPod.git
+
+mmm a / conf / hive - env . sh . template <nl> ppp b / conf / hive - env . sh . template <nl> # Hive Configuration Directory can be controlled by : <nl> # export HIVE_CONF_DIR = <nl> - # Folder containing extra ibraries required for hive compilation / execution can be controlled by : <nl> + # Folder containing extra libraries required for hive compilation / execution can be controlled by : <nl> # export HIVE_AUX_JARS_PATH = <nl>
+Fix typo in conf / hive - env .
+https://github.com/apache/hive.git
+
+deleted file mode 100644 <nl> index 6dd829a . . 0000000 <nl> mmm a / graylog2 - server / src / main / java / org / graylog2 / caches / DIskJournalCacheCorruptSpoolException . java <nl> ppp / dev / null <nl> - package org . graylog2 . caches ; <nl> - <nl> - / * * <nl> - * @ author Dennis Oelkers < dennis @ torch . sh > <nl> - * / <nl> - public class DiskJournalCacheCorruptSpoolException extends Exception { <nl> - } <nl>
+Changing filename .
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < configuration > <nl> < instructions > <nl> < Bundle - SymbolicName > $ { project . artifactId } < / Bundle - SymbolicName > <nl> + < DynamicImport - Package > * < / DynamicImport - Package > <nl> < / instructions > <nl> < / configuration > <nl> < / plugin > <nl>
+Add DynamicImport - Package to OSGi headers
+https://github.com/redisson/redisson.git
+
+similarity index 100 % <nl> rename from README <nl> rename to README . md <nl>
+Rename README to README . md
+https://github.com/claritylab/lucida.git
+
+mmm a / portal - service / src / com / liferay / portlet / documentlibrary / util / DL . java <nl> ppp b / portal - service / src / com / liferay / portlet / documentlibrary / util / DL . java <nl> import javax . portlet . RenderResponse ; <nl> import javax . servlet . http . HttpServletRequest ; <nl> / * * <nl> - * @ author Eudaldo Alnso <nl> + * @ author Eudaldo Alonso <nl> * / <nl> public interface DL { <nl>
+LPS - 33739 Fix typo
+https://github.com/liferay/liferay-portal.git
+
+deleted file mode 100644 <nl> index 88fa4d5ba0 . . 0000000000 <nl> Binary files a / docs / setup / fig / flink_on_tez_translation . png and / dev / null differ <nl> deleted file mode 100644 <nl> index b4698627c6 . . 0000000000 <nl> Binary files a / docs / setup / fig / flink_tez_vertex . png and / dev / null differ <nl>
+Remove obsolete Flink on Tez figures
+https://github.com/apache/flink.git
+
+mmm a / heron / common / src / python / handler / access / heron . py <nl> ppp b / heron / common / src / python / handler / access / heron . py <nl> def get_comp_metrics ( <nl> # form the url <nl> request_url = tornado . httputil . url_concat ( <nl> - create_url ( METRICS_URL_FMT ) , <nl> - ) <nl> + create_url ( METRICS_URL_FMT ) , params ) <nl> # append each metric to the url <nl> for metric_name in metricnames : <nl>
+add missing params for get_comp_metrics ( # 1039 )
+UNKNOWN
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 2 . 0 . 0 <nl> + * STORM - 1979 : Storm Druid Connector implementation . <nl> * STORM - 1277 : port backtype . storm . daemon . executor to java <nl> * STORM - 2020 : Stop using sun internal classes . <nl> * STORM - 2021 : Fix license . <nl>
+Added STORM - 1979 to CHANGELOG
+https://github.com/apache/storm.git
+
+mmm a / astrid / res / layout / header_title_view . xml <nl> ppp b / astrid / res / layout / header_title_view . xml <nl> android : layout_width = " wrap_content " <nl> android : layout_height = " match_parent " <nl> android : paddingLeft = " 10dip " <nl> + android : paddingRight = " 10dip " <nl> android : gravity = " center_vertical " <nl> style = " @ style / TextAppearance . ActionBar_ListsHeader " / > <nl> \ No newline at end of file <nl>
+Adjust padding on tag updates title
+https://github.com/todoroo/astrid.git
+
+similarity index 100 % <nl> rename from flink - libraries / flink - table / src / main / scala / org / apache / flink / api / table / Table . scala <nl> rename to flink - libraries / flink - table / src / main / scala / org / apache / flink / api / table / table . scala <nl>
+Renamed Table . scala to table . scala
+https://github.com/apache/flink.git
+
+mmm a / platform / platform - impl / src / com / intellij / openapi / wm / impl / content / ToolWindowContentUi . java <nl> ppp b / platform / platform - impl / src / com / intellij / openapi / wm / impl / content / ToolWindowContentUi . java <nl> public class ToolWindowContentUi extends JPanel implements ContentUI , PropertyCh <nl> hideWindow ( e ) ; <nl> } <nl> } <nl> + } else { <nl> + hideWindow ( e ) ; <nl> } <nl> } <nl> else { <nl>
+hide no - tabs toolwindow on middle - click on base label
+https://github.com/JetBrains/intellij-community.git
+
+similarity index 100 % <nl> rename from CONTRIBUTING . MD <nl> rename to CONTRIBUTING . md <nl>
+Rename CONTRIBUTING . MD to CONTRIBUTING . md
+https://github.com/jMonkeyEngine/jmonkeyengine.git
+
+mmm a / community / pom . xml <nl> ppp b / community / pom . xml <nl> < groupId > org . neo4j < / groupId > <nl> < artifactId > parent - pom < / artifactId > <nl> < version > 1 < / version > <nl> + < relativePath > . . / . . / pom . xml < / relativePath > <nl> < / parent > <nl> < modelVersion > 4 . 0 . 0 < / modelVersion > <nl>
+Added relativePath to the parent pom so that the automated build scripts doesn ' t complain
+https://github.com/neo4j/neo4j.git
+
+new file mode 100644 <nl> index 000000000000 . . 9dc7ffb0b7d9 <nl> Binary files / dev / null and b / portal - web / test / functional / com / liferay / portalweb / dependencies / sikuli / linux / portal / screenshots / iframe / nba . png differ <nl> new file mode 100644 <nl> index 000000000000 . . 9dc7ffb0b7d9 <nl> Binary files / dev / null and b / portal - web / test / functional / com / liferay / portalweb / dependencies / sikuli / windows / portal / screenshots / iframe / nba . png differ <nl>
+LRQA - 19121 Add missing images
+https://github.com/liferay/liferay-portal.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> buildTypes { <nl> } <nl> distributedPerformanceExperiments { <nl> - tasks " performance : distributedPerformanceExperiments " <nl> + tasks " performance : distributedPerformanceExperiment " <nl> projectProperties useIncomingDistributions : true <nl> } <nl>
+Fix typo
+https://github.com/gradle/gradle.git
+
+mmm a / tests / src / com / todoroo / astrid / service / UpdateMessageServiceTest . java <nl> ppp b / tests / src / com / todoroo / astrid / service / UpdateMessageServiceTest . java <nl> public class UpdateMessageServiceTest extends DatabaseTestCase { <nl> return " [ { message : ' gtasks man ' , plugin : ' gtasks ' } ] " ; <nl> } <nl> } . processUpdates ( ) ; <nl> + gtasksPreferenceService . setToken ( null ) ; <nl> } <nl> public void testUpdateWithInternalPluginOff ( ) { <nl>
+Clear fake gtasks token after unit test
+https://github.com/todoroo/astrid.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> public class TestModelView extends BaseModelView < TestModel2 > { <nl> [ intrications ] ( https : / / github . com / intrications ) <nl> + [ mcumings ] ( https : / / github . com / mcumings ) <nl>
+added mcumings to contributor
+https://github.com/Raizlabs/DBFlow.git
+
+mmm a / VERSION . txt <nl> ppp b / VERSION . txt <nl> jetty - 7 . 0 . 0 . RC2 - SNAPSHOT <nl> + 284510 Enhance jetty - start for diagnosis and unit testing <nl> + 284475 update jetty . sh for new OPTIONS syntax <nl> + Added DebugHandler <nl> + + Added JavaUtilLog for Jetty logging to java . util . logging framework <nl> jetty - 7 . 0 . 0 . RC1 15 June 2009 <nl> + JETTY - 1066 283357 400 response for bad URIs <nl>
+Adding JavaUtilLog info to VERSION . txt
+https://github.com/eclipse/jetty.project.git
+
+Binary files a / screenshot . png and b / screenshot . png differ <nl>
+Replaced huge screenshot
+https://github.com/jdamcd/android-crop.git
+
+mmm a / app / build . gradle <nl> ppp b / app / build . gradle <nl> apply from : ' signing . gradle ' <nl> android { <nl> compileSdkVersion 23 <nl> - buildToolsVersion " 23 . 0 . 2 " <nl> + buildToolsVersion " 23 . 0 . 3 " <nl> / / For customization of Volley to build . <nl> useLibrary ' org . apache . http . legacy ' <nl>
+Update build tools .
+https://github.com/DreaminginCodeZH/Douya.git
+
+new file mode 100644 <nl> index 0000000000 . . 1896388355 <nl> Binary files / dev / null and b / OsmAnd / res / drawable - large / widget_gps_info . png differ <nl>
+Add icon
+https://github.com/JetBrains/kotlin.git
+
+mmm a / buffer / src / main / java / io / netty / buffer / PooledUnsafeDirectByteBuf . java <nl> ppp b / buffer / src / main / java / io / netty / buffer / PooledUnsafeDirectByteBuf . java <nl> final class PooledUnsafeDirectByteBuf extends PooledByteBuf < ByteBuffer > { <nl> @ Override <nl> protected ByteBuffer newInternalNioBuffer ( ByteBuffer memory ) { <nl> - return memory . duplicate ( ) ; <nl> + return memory ; <nl> } <nl> @ Override <nl>
+Optimize PooledUnsafeDirectByteBuf . newInternalNioBuffer ( )
+https://github.com/netty/netty.git
+
+mmm a / astrid / plugin - src / com / todoroo / astrid / subtasks / AstridOrderedListFragmentHelper . java <nl> ppp b / astrid / plugin - src / com / todoroo / astrid / subtasks / AstridOrderedListFragmentHelper . java <nl> public class AstridOrderedListFragmentHelper < LIST > implements OrderedListFragmen <nl> @ Override <nl> protected int computeMinRowHeight ( ) { <nl> - return ( int ) ( metrics . density * 40 ) ; <nl> + return ( int ) ( metrics . density * 45 ) ; <nl> } <nl> @ Override <nl>
+Fixed some height issues with draggable task adapter
+https://github.com/todoroo/astrid.git
+
+mmm a / build / shared / lib / preferences . txt <nl> ppp b / build / shared / lib / preferences . txt <nl> export . application . fullscreen = false <nl> export . application . stop = true <nl> # false will place all exported files into a single . jar <nl> - export . applet . separate_jar_files = false <nl> + # export . applet . separate_jar_files = false <nl> # set to false to no longer delete applet or application folders before export <nl> export . delete_target_folder = true <nl>
+remove unnecessary preference
+https://github.com/processing/processing.git
+
+mmm a / compiler / testData / evaluate / constant / strings . kt <nl> ppp b / compiler / testData / evaluate / constant / strings . kt <nl> val prop8 = " a $ { 1 . toDouble ( ) } " <nl> / / val prop9 : \ " ab \ " <nl> val prop9 = " a " + " b " <nl> + <nl> + / / val prop10 : \ " abb \ " <nl> + val prop10 = prop9 + " b " <nl>
+Add tests for concatenation of strings
+https://github.com/JetBrains/kotlin.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> R / . RData <nl> R / . Rhistory <nl> R / tests / Rsandbox / <nl> Rsandbox <nl> + h2o - perf / perf - target / * jar <nl> deleted file mode 100644 <nl> index e152b092b . . 000000000 <nl> Binary files a / h2o - perf / perf - target / h2o . jar and / dev / null differ <nl>
+don ' t add any h2o jar to the git !
+https://github.com/h2oai/h2o-2.git
+
+new file mode 100644 <nl> index 0000000 . . 4838dc5 <nl> Binary files / dev / null and b / android - pdfview / libs / arm64 - v8a / libvudroid . so differ <nl>
+Compiled libvudroid for arm64 - v8a for devices such as the HTC Nexus 9 .
+https://github.com/JoanZapata/android-pdfview.git
+
+mmm a / spock - gradle / gradle . gradle <nl> ppp b / spock - gradle / gradle . gradle <nl> + apply from : script ( " publishMaven " ) <nl> + <nl> dependencies { <nl> compile gradleApi ( ) <nl> } <nl>
+Publish spock - gradle
+https://github.com/spockframework/spock.git
+
+mmm a / twidere / build . gradle <nl> ppp b / twidere / build . gradle <nl> android { <nl> applicationId " org . mariotaku . twidere " <nl> minSdkVersion 14 <nl> targetSdkVersion 25 <nl> - versionCode 219 <nl> - versionName ' 3 . 3 . 1 ' <nl> + versionCode 220 <nl> + versionName ' 3 . 3 . 2 ' <nl> multiDexEnabled true <nl> buildConfigField ' boolean ' , ' LEAK_CANARY_ENABLED ' , ' Boolean . parseBoolean ( " false " ) ' <nl>
+updated version
+https://github.com/TwidereProject/Twidere-Android.git
+
+mmm a / libs / surfaceflinger / SurfaceFlinger . cpp <nl> ppp b / libs / surfaceflinger / SurfaceFlinger . cpp <nl> # include < fcntl . h > <nl> # include < errno . h > <nl> # include < math . h > <nl> + # include < limits . h > <nl> # include < sys / types . h > <nl> # include < sys / stat . h > <nl> # include < sys / ioctl . h > <nl>
+Add missing < limits . h > include
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / portal - impl / classes / portal . properties <nl> ppp b / portal - impl / classes / portal . properties <nl> \ <nl> / tags / rss , \ <nl> \ <nl> - / wiki / rss , \ <nl> - / wiki / get_page_attachment <nl> + / wiki / get_page_attachment , \ <nl> + / wiki / rss <nl> # # <nl> # # Auto Login <nl>
+LEP - 5045 Bug - Allow guest to see attached images
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 0000000 . . 7f72507 <nl> mmm / dev / null <nl> ppp b / org . springframework . oxm / castorbuilder . properties <nl> + org . exolab . castor . builder . primitivetowrapper = true <nl>
+Added castor properties
+https://github.com/spring-projects/spring-framework.git
+
+mmm a / languagetool - language - modules / en / src / main / resources / org / languagetool / resource / en / removed . txt <nl> ppp b / languagetool - language - modules / en / src / main / resources / org / languagetool / resource / en / removed . txt <nl> alert alert VBG <nl> brief brief VBG <nl> bugs bugs JJ <nl> + earlier earlier JJ <nl> + earliest earliest JJ <nl> ie ie JJ <nl> xx xx JJ <nl> xxx xxx JJ <nl>
+Remove incorrect postag JJ for ' earlier ' and ' earliest '
+https://github.com/languagetool-org/languagetool.git
+
+mmm a / debian / init <nl> ppp b / debian / init <nl> do_start ( ) <nl> error_log_f = " $ cassandra_home / hs_err_ ` date + % s ` . log " <nl> [ - e ` dirname " $ PIDFILE " ` ] | | \ <nl> - install - d - ocassandra - gcassandra - m750 ` dirname $ PIDFILE ` <nl> + install - d - ocassandra - gcassandra - m755 ` dirname $ PIDFILE ` <nl>
+Allow pid file to be read by mere mortals .
+https://github.com/apache/cassandra.git
+
+mmm a / src / org / mockito / internal / configuration / MockitoConfiguration . java <nl> ppp b / src / org / mockito / internal / configuration / MockitoConfiguration . java <nl> + / * <nl> + * Copyright ( c ) 2007 Mockito contributors <nl> + * This program is made available under the terms of the MIT License . <nl> + * / <nl> package org . mockito . internal . configuration ; <nl> import org . mockito . configuration . ReturnValues ; <nl>
+added license header
+https://github.com/mockito/mockito.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> eclipse - build <nl> nb - configuration . xml <nl> nbactions . xml <nl> - / dependency - reduced - pom . xml <nl> + dependency - reduced - pom . xml <nl>
+Ignore dependency - reduced - pom . xml even if used in submodules
+https://github.com/elastic/elasticsearch.git
+
+mmm a / astrid / res / layout / sort_selection_dialog . xml <nl> ppp b / astrid / res / layout / sort_selection_dialog . xml <nl> android : layout_width = " fill_parent " <nl> android : layout_height = " wrap_content " <nl> android : paddingLeft = " 10dip " <nl> - android : paddingRight = " 10dip " > <nl> + android : paddingRight = " 10dip " <nl> + style = " @ style / Content " > <nl> < LinearLayout <nl> android : layout_width = " fill_parent " <nl>
+Fixed black - on - black dialog text issue for sort settings
+https://github.com/todoroo/astrid.git
+
+mmm a / SpongeCommon <nl> ppp b / SpongeCommon <nl> - Subproject commit 9d50bb7914919aa2c98b21b203068db6c27ff769 <nl> + Subproject commit f5d2ea5b91d6a8cc7079763ef4da0a340ffc2cd2 <nl>
+Bump SpongeCommon ref .
+https://github.com/SpongePowered/SpongeForge.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> gradle . properties <nl> actor - sdk / sdk - core / core / core - js / war <nl> actor - sdk / sdk - core / runtime / runtime - js / war <nl> node_modules <nl> + dist <nl>
+ignore dist folders
+https://github.com/actorapp/actor-platform.git
+
+mmm a / advanced / src / main / java / org / neo4j / helpers / Service . java <nl> ppp b / advanced / src / main / java / org / neo4j / helpers / Service . java <nl> public abstract class Service <nl> } <nl> catch ( Exception e ) <nl> { <nl> - return null ; <nl> } <nl> catch ( LinkageError e ) <nl> { <nl> - return null ; <nl> } <nl> } <nl> return null ; <nl>
+Fixed a subtle bug I happened to introduce last night .
+https://github.com/neo4j/neo4j.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < groupId > com . netflix . astyanax < / groupId > <nl> < artifactId > astyanax < / artifactId > <nl> - < version > 0 . 8 . 11 - SNAPSHOT < / version > <nl> + < version > 0 . 8 . 11 < / version > <nl> < parent > <nl> < groupId > org . sonatype . oss < / groupId > <nl>
+prepare release astyanax - 0 . 8 . 11 - SNAPSHOT
+https://github.com/Netflix/astyanax.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> MySQL Performance Analyzer <nl> MySQL Performance Analyzer is an open source project for MySQL performance monitoring and analysis . <nl> This repository includes two sub projects : <nl> - Java web application project myperf <nl> - Java web server jetty wrapper <nl> + * Java web application project myperf <nl> + * Java web server jetty wrapper <nl> Build <nl> - - - - - - <nl>
+Fix linebreaks in summary in README
+https://github.com/yahoo/mysql_perf_analyzer.git
+
+new file mode 100644 <nl> index 0000000000 . . a6b3daec93 <nl> mmm / dev / null <nl> ppp b / OsmAnd / res / values - be - rLatn / phrases . xml <nl> + < ? xml version = " 1 . 0 " encoding = " utf - 8 " ? > <nl> + < resources > < / resources > <nl> \ No newline at end of file <nl>
+Added translation using Weblate ( Belarusian ( latin ) )
+https://github.com/osmandapp/Osmand.git
+
+mmm a / CHANGES . txt <nl> ppp b / CHANGES . txt <nl> * clean up KSMetadata , CFMetadata from unnecessary <nl> Thrift < - > Avro conversion methods ( CASSANDRA - 3032 ) <nl> * Add timeouts to client request schedulers ( CASSANDRA - 3079 ) <nl> - <nl> + * Cli to use hashes rather than array of hashes for strategy options ( CASSANDRA - 3081 ) <nl> 0 . 8 . 5 <nl> * fix NPE when encryption_options is unspecified ( CASSANDRA - 3007 ) <nl>
+update CHANGES . txt for CASSANDRA - 3081
+https://github.com/apache/cassandra.git
+
+mmm a / actor - server / version . sbt <nl> ppp b / actor - server / version . sbt <nl> - version in ThisBuild : = " 1 . 0 . 139 " <nl> \ No newline at end of file <nl> + version in ThisBuild : = " 1 . 0 . 140 - SNAPSHOT " <nl> \ No newline at end of file <nl>
+setting version to 1 . 0 . 140 - SNAPSHOT
+https://github.com/actorapp/actor-platform.git
+
+mmm a / src / com / facebook / buck / util / BlockingHttpEndpoint . java <nl> ppp b / src / com / facebook / buck / util / BlockingHttpEndpoint . java <nl> public class BlockingHttpEndpoint implements HttpEndpoint , Closeable { <nl> return new HttpResponse ( content , response ) ; <nl> } catch ( IOException e ) { <nl> throw new RuntimeException ( e ) ; <nl> + } finally { <nl> + connection . disconnect ( ) ; <nl> } <nl> } <nl> } ) ; <nl>
+Close the HTTP connection in the callable
+https://github.com/facebook/buck.git
+
+deleted file mode 100644 <nl> index 0568eaf7c . . 000000000 <nl> Binary files a / hadoop / lib / hadoop - 0 . 20 . 2 - core . jar and / dev / null differ <nl>
+Remove jar locally , use from H2O lib dir .
+https://github.com/h2oai/h2o-2.git
+
+mmm a / actor - server / version . sbt <nl> ppp b / actor - server / version . sbt <nl> - version in ThisBuild : = " 1 . 0 . 146 " <nl> \ No newline at end of file <nl> + version in ThisBuild : = " 1 . 0 . 147 - SNAPSHOT " <nl> \ No newline at end of file <nl>
+setting version to 1 . 0 . 147 - SNAPSHOT
+https://github.com/actorapp/actor-platform.git
+
+similarity index 100 % <nl> rename from src / java / org / codehaus / groovy / grails / support / ResourceAwareTemplateEngine . java <nl> rename to grails - web / src / main / groovy / org / codehaus / groovy / grails / support / ResourceAwareTemplateEngine . java <nl>
+moved another class to web
+https://github.com/grails/grails-core.git
+
+mmm a / library / src / com / github / espiandev / showcaseview / ShowcaseViews . java <nl> ppp b / library / src / com / github / espiandev / showcaseview / ShowcaseViews . java <nl> public class ShowcaseViews { <nl> } <nl> private boolean showcaseActionBar ( ItemViewProperties properties ) { <nl> - return properties . itemType > = ItemViewProperties . ID_NOT_IN_ACTIONBAR ; <nl> + return properties . itemType > ItemViewProperties . ID_NOT_IN_ACTIONBAR ; <nl> } <nl> private View . OnClickListener createShowcaseViewDismissListener ( final ShowcaseView showcaseView ) { <nl>
+Fixed the check used to decide if it the given view id is from an action item or a simple view .
+https://github.com/amlcurran/ShowcaseView.git
+
+mmm a / bundles / core / org . openhab . core . test / webapps / static / version <nl> ppp b / bundles / core / org . openhab . core . test / webapps / static / version <nl> - 1 . 7 . 0 <nl> \ No newline at end of file <nl> + 1 . 8 . 0 <nl> \ No newline at end of file <nl>
+changed static version
+https://github.com/openhab/openhab.git
+
+similarity index 100 % <nl> rename from grails - plugin - datasource / src / test / groovy / grails / transaction / TransactionalTransformSpec . groovy <nl> rename to grails - test - suite - uber / src / test / groovy / grails / transaction / TransactionalTransformSpec . groovy <nl>
+Move spec so a transformation is not applied in the same project which defines it
+https://github.com/grails/grails-core.git
+
+new file mode 100644 <nl> index 0000000 . . 5ecd3a2 <nl> Binary files / dev / null and b / docs / resources / images / 02 - 01 / layout_linear_weight . png differ <nl>
+add image for layout - weight
+https://github.com/mixi-inc/AndroidTraining.git
+
+new file mode 100644 <nl> index 0000000 . . 0891b7a <nl> Binary files / dev / null and b / objc / examples / ios / bare / Default - 568h @ 2x . png differ <nl>
+add blank iphone5 preview
+https://github.com/zxing/zxing.git
+
+deleted file mode 100644 <nl> index 74b42371 . . 00000000 <nl> Binary files a / lib / jchronic . jar and / dev / null differ <nl> deleted file mode 100644 <nl> index f5d9f656 . . 00000000 <nl> Binary files a / lib / worldeditsunrhino . jar and / dev / null differ <nl>
+Removed lib / .
+https://github.com/sk89q/WorldEdit.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> buildscript { <nl> jcenter ( ) <nl> } <nl> dependencies { <nl> - classpath ' com . android . tools . build : gradle : 2 . 0 . 0 - alpha7 ' <nl> + classpath ' com . android . tools . build : gradle : 2 . 0 . 0 - alpha8 ' <nl> classpath ' com . novoda : bintray - release : 0 . 3 . 4 ' <nl> } <nl> } <nl>
+update to latest gradle plugin
+https://github.com/mikepenz/FastAdapter.git
+
+mmm a / graphhopper . sh <nl> ppp b / graphhopper . sh <nl> function prepareEclipse { <nl> # # now handle actions which do not take an OSM file <nl> if [ " $ ACTION " = " clean " ] ; then <nl> + rm - rf . / android / app / target <nl> rm - rf . / * / target <nl> rm - rf . / target <nl> exit <nl>
+clean action in script misses target folder for android
+https://github.com/graphhopper/graphhopper.git
+
+mmm a / jre_emul / android / libcore / luni / src / main / native / java_lang_IntegralToString . h <nl> ppp b / jre_emul / android / libcore / luni / src / main / native / java_lang_IntegralToString . h <nl> # import < Foundation / Foundation . h > <nl> + @ class IOSByteArray ; <nl> @ class JavaLangAbstractStringBuilder ; <nl> @ class JavaLangStringBuilder ; <nl>
+Add a missing import .
+https://github.com/google/j2objc.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > io . socket < / groupId > <nl> < artifactId > engine . io - client < / artifactId > <nl> - < version > 0 . 6 . 1 < / version > <nl> + < version > 0 . 6 . 2 < / version > <nl> < / dependency > <nl> < dependency > <nl> < groupId > org . json < / groupId > <nl>
+bump engine . io - client
+https://github.com/socketio/socket.io-client-java.git
+
+mmm a / src / main / java / com / xtremelabs / robolectric / shadows / ShadowAdapterView . java <nl> ppp b / src / main / java / com / xtremelabs / robolectric / shadows / ShadowAdapterView . java <nl> public class ShadowAdapterView extends ShadowViewGroup { <nl> } <nl> @ Implementation <nl> - public Object getSelectedItem ( ) { <nl> + public Object getSelectedItem ( ) { <nl> int pos = getSelectedItemPosition ( ) ; <nl> return getItemAtPosition ( pos ) ; <nl> } <nl>
+Added getSelectedItem to the ShadowAdpaterView base class for Android ' s Spinner class .
+https://github.com/robolectric/robolectric.git
+
+mmm a / squidb / src / com / yahoo / squidb / data / SquidDatabase . java <nl> ppp b / squidb / src / com / yahoo / squidb / data / SquidDatabase . java <nl> public abstract class SquidDatabase { <nl> } <nl> } <nl> - / / For use only whenvalidating queries <nl> + / / For use only when validating queries <nl> private void compileStatement ( String sql ) { <nl> acquireNonExclusiveLock ( ) ; <nl> try { <nl>
+Fix a typo in comment
+https://github.com/yahoo/squidb.git
+
+mmm a / languagetool - language - modules / ca / src / main / resources / org / languagetool / resource / ca / multiwords . txt <nl> ppp b / languagetool - language - modules / ca / src / main / resources / org / languagetool / resource / ca / multiwords . txt <nl> sine qua non LOC_ADJ <nl> sobre manera LOC_ADV <nl> sota capa d ' LOC_PREP <nl> sota capa de LOC_PREP <nl> + spaghetti western _GN_MS <nl> + spaghetti westerns _GN_MP <nl> statu quo _GN_MS <nl> stricto sensu LOC_ADV <nl> sui generis LOC_ADJ <nl>
+update multiwords . txt
+https://github.com/languagetool-org/languagetool.git
+
+mmm a / twidere / build . gradle <nl> ppp b / twidere / build . gradle <nl> android { <nl> applicationId " org . mariotaku . twidere " <nl> minSdkVersion 14 <nl> targetSdkVersion 24 <nl> - versionCode 197 <nl> - versionName " 3 . 1 . 8 " <nl> + versionCode 198 <nl> + versionName " 3 . 1 . 9 " <nl> multiDexEnabled true <nl> buildConfigField ' boolean ' , ' LEAK_CANARY_ENABLED ' , ' Boolean . parseBoolean ( " false " ) ' <nl>
+updated version
+https://github.com/TwidereProject/Twidere-Android.git
+
+old mode 100755 <nl> new mode 100644 <nl> old mode 100755 <nl> new mode 100644 <nl> old mode 100755 <nl> new mode 100644 <nl> old mode 100755 <nl> new mode 100644 <nl>
+Remove executable bit .
+https://github.com/jackpal/Android-Terminal-Emulator.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> gen / <nl> # Gradle files <nl> . gradle / <nl> + gradle / <nl> build / <nl> # Local configuration file ( sdk path , etc ) <nl>
+Released # 6 of 2015 . 09 . 05
+https://github.com/davideas/FlexibleAdapter.git
+
+mmm a / packages / Keyguard / src / com / android / keyguard / KeyguardViewManager . java <nl> ppp b / packages / Keyguard / src / com / android / keyguard / KeyguardViewManager . java <nl> public class KeyguardViewManager { <nl> } else { <nl> mWindowLayoutParams . flags & = ~ WindowManager . LayoutParams . FLAG_SHOW_WALLPAPER ; <nl> } <nl> + mWindowLayoutParams . format = show ? PixelFormat . TRANSLUCENT : PixelFormat . OPAQUE ; <nl> mViewManager . updateViewLayout ( mKeyguardHost , mWindowLayoutParams ) ; <nl> } <nl>
+Prevent Lockscreen album art from activating FLAG_KEEP_SCREEN_ON
+https://github.com/android/platform_frameworks_base.git
+
+new file mode 100644 <nl> index 0000000 . . 0302f00 <nl> Binary files / dev / null and b / core / res / res / drawable - xlarge / default_wallpaper . jpg differ <nl>
+Add a default xlarge wallpaper .
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> install : mvn clean verify site - Dlinkcheck . skip = true - Dmaven . javadoc . skip = true <nl> - Dpmd . skip = true - Dfindbugs . skip = true <nl> after_success : <nl> - - mvn - Ptravis surefire - report : report jacoco : report coveralls : jacoco <nl> - <nl> + - mvn - Ptravis clean test jacoco : report coveralls : report <nl>
+Fix command used to invoke Coveralls , issue # 806
+https://github.com/checkstyle/checkstyle.git
+
+mmm a / android / res / values / arrays . xml <nl> ppp b / android / res / values / arrays . xml <nl> < string - array name = " pagesegmentationmodes " > <nl> < item > Auto < / item > <nl> + < item > Auto ( no OSD ) < / item > <nl> < item > Single block < / item > <nl> < item > Single character < / item > <nl> < item > Single column < / item > <nl>
+add Auto + OSD page segmentation mode
+https://github.com/rmtheis/android-ocr.git
+
+mmm a / portal - impl / src / portal . properties <nl> ppp b / portal - impl / src / portal . properties <nl> / blogs / edit_entry , \ <nl> / blogs / edit_entry_discussion , \ <nl> / blogs / rss , \ <nl> + / blogs / trackback , \ <nl> \ <nl> / blogs_aggregator / edit_entry , \ <nl> / blogs_aggregator / edit_entry_discussion , \ <nl>
+LPS - 21453 Ignore auth token check for blogs trackback urls
+https://github.com/liferay/liferay-portal.git
+
+deleted file mode 100644 <nl> index 721185f . . 0000000 <nl> mmm a / subprojects / docs / src / samples / javaGradlePlugin / src / main / resources / META - INF / gradle - plugins / simple - plugin . properties <nl> ppp / dev / null <nl> - implementation - class = org . gradle . sample . SimplePlugin <nl>
+Remove the manually - maintained descriptor .
+https://github.com/gradle/gradle.git
+
+Binary files a / resources / install / windows / wix - banner . jpg and b / resources / install / windows / wix - banner . jpg differ <nl> Binary files a / resources / install / windows / wix - dialog . jpg and b / resources / install / windows / wix - dialog . jpg differ <nl>
+Enhanced Windows installer images .
+https://github.com/jitsi/jitsi.git
+
+mmm a / webapps / docs / changelog . xml <nl> ppp b / webapps / docs / changelog . xml <nl> < ! DOCTYPE document [ <nl> < ! ENTITY project SYSTEM " project . xml " > <nl> ] > <nl> + < ? xml - stylesheet type = " text / xsl " href = " tomcat - docs . xsl " ? > <nl> < document url = " changelog . html " > <nl> & project ; <nl>
+Add < ?
+https://github.com/apache/tomcat.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 0 . 11 . 0 <nl> # # 0 . 10 . 0 <nl> + * STORM - 833 : Logging framework logback - > log4j 2 . x <nl> * STORM - 842 : Drop Support for Java 1 . 6 <nl> * STORM - 835 : Netty Client hold batch object until io operation complete <nl> * STORM - 827 : Allow AutoTGT to work with storm - hdfs too . <nl>
+Added STORM - 833 to Changelog
+https://github.com/apache/storm.git
+
+mmm a / src / java / org / httpkit / server / AsyncChannel . java <nl> ppp b / src / java / org / httpkit / server / AsyncChannel . java <nl> public class AsyncChannel { <nl> if ( isHeaderSent ) { <nl> writeChunk ( data , close ) ; <nl> } else { <nl> - firstWrite ( data , close ) ; <nl> isHeaderSent = true ; <nl> + firstWrite ( data , close ) ; <nl> } <nl> } <nl> return true ; <nl>
+We sent a response the client , which immediately sends a new request .
+https://github.com/http-kit/http-kit.git
+
+mmm a / owncloud - android - library <nl> ppp b / owncloud - android - library <nl> - Subproject commit dc057816d3b2b5e2f1544773249d86ac875df4b3 <nl> + Subproject commit 3b9777c5b67b63792ffb86e9da6c12d3264b4f59 <nl>
+Updated reference to library
+https://github.com/owncloud/android.git
+
+Binary files a / lib / native / linux - ppc64 . jar and b / lib / native / linux - ppc64 . jar differ <nl>
+update linux - ppc64 native
+https://github.com/java-native-access/jna.git
+
+deleted file mode 100644 <nl> index e69de29bb2d1 . . 000000000000 <nl> deleted file mode 100644 <nl> index e69de29bb2d1 . . 000000000000 <nl>
+LPS - 44514 Remove generated logs
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 0000000 . . 3336018 <nl> Binary files / dev / null and b / BCV Icon . png differ <nl>
+Added Icon
+https://github.com/Konloch/bytecode-viewer.git
+
+mmm a / WordPress / build . gradle <nl> ppp b / WordPress / build . gradle <nl> android { <nl> minSdkVersion 14 <nl> targetSdkVersion 23 <nl> + vectorDrawables . useSupportLibrary = true <nl> buildConfigField " boolean " , " VISUAL_EDITOR_AVAILABLE " , " false " <nl> buildConfigField " boolean " , " IN_APP_BILLING_AVAILABLE " , " false " <nl> } <nl>
+Adding vector drawable support for pre - 20 api
+https://github.com/wordpress-mobile/WordPress-Android.git
+
+mmm a / tools / apt_deps . sh <nl> ppp b / tools / apt_deps . sh <nl> apt - get install - y zlib1g - dev \ <nl> libkrb5 - dev \ <nl> libsasl2 - dev \ <nl> libnuma - dev \ <nl> - scons <nl> + scons \ <nl> + python - gobject <nl> pip install - - upgrade distribute <nl> pip install - - upgrade pip <nl> pip install - r python_requirements . txt <nl>
+add python - gobject
+https://github.com/claritylab/lucida.git
+
+deleted file mode 100644 <nl> index 2054530ed . . 000000000 <nl> Binary files a / SeriesGuide / src / main / res / drawable - hdpi / list_pressed_holo_light . 9 . png and / dev / null differ <nl>
+Remove unused background drawable .
+https://github.com/UweTrottmann/SeriesGuide.git
+
+mmm a / src / main / org / codehaus / groovy / antlr / groovy . g <nl> ppp b / src / main / org / codehaus / groovy / antlr / groovy . g <nl> declarationStart ! <nl> IDENT <nl> ; <nl> - / * * Not yet used - but we could use something like this to look for fully qualified type names <nl> - * / <nl> qualifiedTypeName ! <nl> : <nl> IDENT ( DOT IDENT ) * DOT upperCaseIdent <nl>
+remove erroneous legacy comment
+https://github.com/apache/groovy.git
+
+Binary files a / lib / installer - exclude / ice4j . jar and b / lib / installer - exclude / ice4j . jar differ <nl>
+corrects logged addresses for relayed packets .
+https://github.com/jitsi/jitsi.git
+
+mmm a / client / src / scripts / model - list - view . coffee <nl> ppp b / client / src / scripts / model - list - view . coffee <nl> Steam . ModelListView = ( _ ) - > <nl> self = <nl> data : model <nl> - title : model . model_algorithm <nl> + title : model . key <nl> caption : model . model_category <nl> cutline : ' Response Column : ' + model . response_column_name <nl> display : - > activateAndDisplayItem self <nl>
+Display model keys in model list instead of algorithm .
+https://github.com/h2oai/h2o-2.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > com . zegoggles < / groupId > <nl> < artifactId > k9 - imapstore < / artifactId > <nl> - < version > 0 . 2 < / version > <nl> + < version > 0 . 3 < / version > <nl> < / dependency > <nl> < dependency > <nl>
+Closes # 347
+https://github.com/jberkel/sms-backup-plus.git
+
+similarity index 100 % <nl> rename from test - unit / org / jivesoftware / smack / util / DNSUtilTest . java <nl> rename to test / org / jivesoftware / smack / util / DNSUtilTest . java <nl>
+SMACK - 530 Moved DNSUtilTest to integration tests
+https://github.com/igniterealtime/Smack.git
+
+mmm a / org . springframework . instrument / . project <nl> ppp b / org . springframework . instrument / . project <nl> < ? xml version = " 1 . 0 " encoding = " UTF - 8 " ? > <nl> < projectDescription > <nl> - < name > org . springframework . agent < / name > <nl> + < name > org . springframework . instrument < / name > <nl> < comment > < / comment > <nl> < projects > <nl> < / projects > <nl>
+Changed project from agent to instrument
+https://github.com/spring-projects/spring-framework.git
+
+mmm a / sonar - server / src / main / webapp / WEB - INF / db / migrate / 480_add_rule_note_columns . rb <nl> ppp b / sonar - server / src / main / webapp / WEB - INF / db / migrate / 480_add_rule_note_columns . rb <nl> # <nl> # Sonar 4 . 2 <nl> + # SONAR - 4923 <nl> # Create columns to copy rule_notes ( resp . active_rule_notes ) contents to rules ( resp . active_rules ) <nl> # <nl> class AddRuleNoteColumns < ActiveRecord : : Migration <nl>
+SONAR - 4923 Add missing JIRA ticket on migration
+https://github.com/SonarSource/sonarqube.git
+
+mmm a / core / java / android / content / pm / PackageParser . java <nl> ppp b / core / java / android / content / pm / PackageParser . java <nl> public class PackageParser { <nl> if ( sa . getBoolean ( <nl> com . android . internal . R . styleable . AndroidManifestApplication_testOnly , <nl> - true ) ) { <nl> + false ) ) { <nl> ai . flags | = ApplicationInfo . FLAG_TEST_ONLY ; <nl> } <nl>
+Whoops fix installing .
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / definitions / liferay - hook_6_1_0 . dtd <nl> ppp b / definitions / liferay - hook_6_1_0 . dtd <nl> control . panel . entry . class . default <nl> convert . processes <nl> default . landing . page . path <nl> dl . file . entry . drafts . enabled <nl> + dl . file . entry . processors <nl> dl . store . impl <nl> dl . webdav . auto . unlock <nl> dl . webdav . save . to . single . version <nl>
+LPS - 18792 Add property to dtd
+https://github.com/liferay/liferay-portal.git
+
+mmm a / languagetool - language - modules / de / src / main / resources / org / languagetool / resource / de / hunspell / spelling . txt <nl> ppp b / languagetool - language - modules / de / src / main / resources / org / languagetool / resource / de / hunspell / spelling . txt <nl> Zirkulationsleitungen <nl> Kommazahl <nl> Kommazahlen <nl> Pinzettengriff / S <nl> + Brexit / S <nl> + Paddler / SN <nl> + gegenzuzeichnen <nl>
+adding words suggested by users
+https://github.com/languagetool-org/languagetool.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> / . project <nl> / . classpath <nl> / . factorypath <nl> + / . idea / <nl> / fromhost / <nl> / base_workspace / bazel - bin <nl> / base_workspace / bazel - genfiles <nl> / base_workspace / examples <nl> / base_workspace / tools <nl> / base_workspace / third_party <nl> + / bazel . iml <nl> / tools / jdk / jdk <nl> / tools / jdk / ijar <nl> / tools / jdk / JavaBuilder_deploy . jar <nl>
+Tell git to ignore files generated for / by IntelliJ Idea IDE .
+https://github.com/bazelbuild/bazel.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> Requirements <nl> * Jetty 7 . 4 . 0 . v20110414 ( for ` metrics - jetty ` ) <nl> * Log4J 1 . 2 . 16 ( for ` metrics - log4j ` ) <nl> * Logback 0 . 9 . 28 ( for ` metrics - logback ` ) <nl> + * Ehcache 2 . 4 . 2 ( for ` metrics - ehcache ` ) <nl> How To Use <nl>
+Note the version of Ehcache used in the README .
+https://github.com/dropwizard/metrics.git
+
+mmm a / samples / java - play2 / README . md <nl> ppp b / samples / java - play2 / README . md <nl> val appDependencies : Seq [ sbt . ModuleID ] = Seq ( <nl> You can run the sample app as such : <nl> ` ` ` ` <nl> - play run <nl> + activator run <nl> ` ` ` ` <nl> The application will listen on port 9000 and respond to ` http : / / localhost : 9000 / api - docs . json ` <nl>
+play command has become the activator command
+https://github.com/swagger-api/swagger-core.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < module > rpc < / module > <nl> < module > thrift < / module > <nl> < module > web < / module > <nl> - < module > naver < / module > <nl> < / modules > <nl> < properties > <nl>
+Removed submodule ' naver '
+https://github.com/naver/pinpoint.git
+
+new file mode 100644 <nl> index 000000000000 . . 90d819e85afa <nl> Binary files / dev / null and b / portal - web / test / functional / com / liferay / portalweb / dependencies / sikuli / linux / portal / screenshots / webproxy / google_images . png differ <nl> new file mode 100644 <nl> index 000000000000 . . 90d819e85afa <nl> Binary files / dev / null and b / portal - web / test / functional / com / liferay / portalweb / dependencies / sikuli / windows / portal / screenshots / webproxy / google_images . png differ <nl>
+LRQA - 18812 Add missing google images pngs
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 00000000 . . 3082e60f <nl> Binary files / dev / null and b / CommonApp / res / drawable - nodpi / titanic_wave_black . png differ <nl>
+add Demo . apk
+https://github.com/cymcsg/UltimateAndroid.git
+
+Binary files a / platform / platform - resources - en / src / tips / ShowHideSideBars . html and b / platform / platform - resources - en / src / tips / ShowHideSideBars . html differ <nl>
+IDEA - 119515 ( Tip of the day contains null character and unclear screen shot )
+https://github.com/JetBrains/intellij-community.git
+
+deleted file mode 100644 <nl> index cdd5362 . . 0000000 <nl> Binary files a / java / libraries / opengl2 / library / opengl2 . jar and / dev / null differ <nl>
+Removed opengl2 jar , initially added by accident
+https://github.com/processing/processing.git
+
+mmm a / UltimateRecyclerView / app / build . gradle <nl> ppp b / UltimateRecyclerView / app / build . gradle <nl> android { <nl> proguardFiles getDefaultProguardFile ( ' proguard - android . txt ' ) , ' proguard - rules . pro ' <nl> } <nl> } <nl> + lintOptions { <nl> + abortOnError false <nl> + } <nl> } <nl> repositories { <nl> flatDir { <nl>
+add lintOptions {
+https://github.com/cymcsg/UltimateRecyclerView.git
+
+mmm a / libs / surfaceflinger / DisplayHardware / DisplayHardware . cpp <nl> ppp b / libs / surfaceflinger / DisplayHardware / DisplayHardware . cpp <nl> void checkEGLErrors ( const char * token ) <nl> DisplayHardware : : DisplayHardware ( <nl> const sp < SurfaceFlinger > & flinger , <nl> uint32_t dpy ) <nl> - : DisplayHardwareBase ( flinger , dpy ) <nl> + : DisplayHardwareBase ( flinger , dpy ) , mFlags ( 0 ) <nl> { <nl> init ( dpy ) ; <nl> } <nl>
+fix uninitialized variable in DisplayHardware
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / CHANGES <nl> ppp b / CHANGES <nl> = = 1 . 5 . 2 ( 1515 ) tbd <nl> * Fix notifications getting displayed when not connected to Wifi <nl> + * Fixed greek translation <nl> = = 1 . 5 . 1 ( 1514 ) 06 - 07 - 2013 <nl>
+Add changes
+https://github.com/jberkel/sms-backup-plus.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < groupId > com . netflix . curator < / groupId > <nl> < artifactId > curator - x - zkclient - bridge < / artifactId > <nl> - < version > 3 . 0 . 0 - SNAPSHOT < / version > <nl> + < version > 3 . 0 . 0 < / version > <nl> < parent > <nl> < groupId > org . sonatype . oss < / groupId > <nl>
+prepare release curator - x - zkclient - bridge - 3 . 0 . 0
+https://github.com/Netflix/curator.git
+
+mmm a / testData / completion / structKeywordAsFunctionParameter_after . go <nl> ppp b / testData / completion / structKeywordAsFunctionParameter_after . go <nl> package foo <nl> - func function ( struct { < caret > } ) { <nl> + func function ( struct { < caret > } ) { <nl> } <nl> \ No newline at end of file <nl>
+Fix testdata
+https://github.com/go-lang-plugin-org/go-lang-idea-plugin.git
+
+Binary files a / art / Screenshot_demo_1 . png and b / art / Screenshot_demo_1 . png differ <nl>
+Replace screenshot with a new one
+https://github.com/pedrovgs/Renderers.git
+
+new file mode 100644 <nl> index 0000000 . . 81ef58a <nl> Binary files / dev / null and b / LibrarySuperToasts / SuperToastsDemo . apk differ <nl> new file mode 100644 <nl> index 0000000 . . 0565465 <nl> mmm / dev / null <nl> ppp b / LibrarySuperToasts / bin / jarlist . cache <nl> + # cache for current jar dependency . DO NOT EDIT . <nl> + # format is < lastModified > < length > < SHA - 1 > < path > <nl> + # Encoding is UTF - 8 <nl>
+Added Demo APK .
+https://github.com/JohnPersano/SuperToasts.git
+
+mmm a / TODO . txt <nl> ppp b / TODO . txt <nl> * test use of methods - as - closures <nl> foo = bean . someMethod ; <nl> foo . call ( arguments ) ; <nl> + <nl> + * test use of assert statements <nl> * support static new ( ) method for constructors <nl>
+added support for AssertStatement
+https://github.com/groovy/groovy-core.git
+
+mmm a / src / reference / docbook / mvc . xml <nl> ppp b / src / reference / docbook / mvc . xml <nl> public class WebConfig extends WebMvcConfigurerAdapter { <nl> @ Override <nl> public void configureContentNegotiation ( ContentNegotiationConfigurer configurer ) { <nl> - configurer . setFavorPathExtension ( false ) . setFavorParameter ( true ) ; <nl> + configurer . favorPathExtension ( false ) . favorParameter ( true ) ; <nl> } <nl> } < / programlisting > <nl>
+Fix typo in reference docs
+https://github.com/spring-projects/spring-framework.git
+
+mmm a / contrib / externs / angular - 1 . 5 . js <nl> ppp b / contrib / externs / angular - 1 . 5 . js <nl> angular . Directive ; <nl> angular . Change ; <nl> / * * @ type { * } * / <nl> - angular . Change . prototype . crrentValue ; <nl> + angular . Change . prototype . currentValue ; <nl> / * * @ type { * } * / <nl> angular . Change . prototype . previousValue ; <nl>
+Fix typo in angular - 1 . 5 externs
+https://github.com/google/closure-compiler.git
+
+mmm a / java / Chapter 9 / Question9_1 / Question . java <nl> ppp b / java / Chapter 9 / Question9_1 / Question . java <nl> package Question9_1 ; <nl> - import java . util . HashMap ; <nl> - <nl> public class Question { <nl> public static int countWaysDP ( int n , int [ ] map ) { <nl>
+remove import hashmap statement since it ' s not been used .
+https://github.com/careercup/ctci.git
+
+mmm a / tools / aapt / Command . cpp <nl> ppp b / tools / aapt / Command . cpp <nl> int doDump ( Bundle * bundle ) <nl> config . screenWidthDp = 320 ; <nl> config . screenHeightDp = 480 ; <nl> config . smallestScreenWidthDp = 320 ; <nl> + config . screenLayout | = ResTable_config : : SCREENSIZE_NORMAL ; <nl> assets . setConfiguration ( config ) ; <nl> const ResTable & res = assets . getResources ( false ) ; <nl>
+Modify base Configuration used for aapt dump badging
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> - # java - repl <nl> + # Java REPL <nl> - java - repl is a simple Read - Eval - Print - Loop for Java language . <nl> + Java REPL is a simple Read - Eval - Print - Loop for Java language . <nl> # # Build <nl>
+updated name in readme
+https://github.com/albertlatacz/java-repl.git
+
+mmm a / python / edu / build / plugin - list . txt <nl> ppp b / python / edu / build / plugin - list . txt <nl> remote - servers - git <nl> github <nl> IntelliLang <nl> IntelliLang - python <nl> - learn - python <nl> + interactive - learning <nl> + interactive - learning - python <nl> course - creator <nl> + course - creator - python <nl> hg4idea <nl> \ No newline at end of file <nl>
+updated plugin list according to new plugin structure in PyCharm EDU
+https://github.com/JetBrains/intellij-community.git
+
+deleted file mode 100644 <nl> index 9fcbe03 . . 0000000 <nl> mmm a / idea / testData / formatter / PropertyWIthInference_after . kt <nl> ppp / dev / null <nl> - val <nl> - a = <nl> - 12 <nl> new file mode 100644 <nl> index 0000000 . . 9fcbe03 <nl> mmm / dev / null <nl> ppp b / idea / testData / formatter / PropertyWithInference_after . kt <nl> + val <nl> + a = <nl> + 12 <nl>
+Fix test with file rename
+https://github.com/JetBrains/kotlin.git
+
+mmm a / spock - grails / . gitignore <nl> ppp b / spock - grails / . gitignore <nl> plugin . xml <nl> stacktrace . log <nl> target <nl> web - app <nl> + . DS_Store <nl>
+Ignore all .
+https://github.com/Bukkit/Bukkit.git
+
+mmm a / astrid / plugin - src / com / todoroo / astrid / gcal / GCalControlSet . java <nl> ppp b / astrid / plugin - src / com / todoroo / astrid / gcal / GCalControlSet . java <nl> public class GCalControlSet extends PopupControlSet { <nl> DependencyInjectionService . getInstance ( ) . inject ( this ) ; <nl> this . title = title ; <nl> calendars = Calendars . getCalendars ( ) ; <nl> + getView ( ) ; / / Hack to force initialized <nl> } <nl> @ Override <nl>
+Fixed a bug where GCalControlSet might not be initialized correctly
+https://github.com/todoroo/astrid.git
+
+mmm a / servers / src / main / java / tachyon / master / file / journal / ReinitializeFileEntry . java <nl> ppp b / servers / src / main / java / tachyon / master / file / journal / ReinitializeFileEntry . java <nl> public final class ReinitializeFileEntry extends JournalEntry { <nl> } <nl> / * * <nl> - * @ return the TLL <nl> + * @ return the TTL <nl> * / <nl> @ JsonGetter <nl> public long getTTL ( ) { <nl>
+Addressing review comments .
+https://github.com/Alluxio/alluxio.git
+
+deleted file mode 100644 <nl> index b080d2d . . 0000000 <nl> mmm a / library / . settings / org . eclipse . jdt . core . prefs <nl> ppp / dev / null <nl> - eclipse . preferences . version = 1 <nl> - org . eclipse . jdt . core . compiler . codegen . targetPlatform = 1 . 6 <nl> - org . eclipse . jdt . core . compiler . compliance = 1 . 6 <nl> - org . eclipse . jdt . core . compiler . source = 1 . 6 <nl>
+Removed redundant file
+https://github.com/nostra13/Android-Universal-Image-Loader.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> allprojects { <nl> ext { <nl> compileSdkVersion = 21 <nl> - buildToolsVersion = ' 21 . 0 . 2 ' <nl> + buildToolsVersion = ' 21 . 1 . 1 ' <nl> / / API level 15 + - > version 15xxx <nl> versionCode = 15055 <nl>
+Update build tools to 21 . 1 . 1 .
+https://github.com/UweTrottmann/SeriesGuide.git
+
+mmm a / releases . moxie <nl> ppp b / releases . moxie <nl> r17 : { <nl> - Slawomir Bochenski <nl> - Stardrad Yin <nl> - Thomas Pummer <nl> + - Yukihiko Sawanobori <nl> - github / akquinet <nl> - github / dapengme <nl> } <nl>
+Updated documentation
+https://github.com/ether/pad.git
+
+Binary files a / tests / gdx - tests - android / assets / data / g3d / head . g3db and b / tests / gdx - tests - android / assets / data / g3d / head . g3db differ <nl> Binary files a / tests / gdx - tests - android / assets / data / g3d / teapot . g3db and b / tests / gdx - tests - android / assets / data / g3d / teapot . g3db differ <nl>
+Fix opacity on models
+https://github.com/libgdx/libgdx.git
+
+mmm a / src / com / fsck / k9 / PRNGFixes . java <nl> ppp b / src / com / fsck / k9 / PRNGFixes . java <nl> public final class PRNGFixes { <nl> out . flush ( ) ; <nl> mSeeded = true ; <nl> } catch ( IOException e ) { <nl> - throw new SecurityException ( <nl> - " Failed to mix seed into " + URANDOM_FILE , e ) ; <nl> + mSeeded = true ; <nl> } <nl> } <nl>
+Some kernels have frandom and erandom
+https://github.com/k9mail/k-9.git
+
+mmm a / client / src / scripts / typedef . global . coffee <nl> ppp b / client / src / scripts / typedef . global . coffee <nl> Steam . Typedef = do - > <nl> errors . push error <nl> else <nl> errors . push " Required attribute < # { attributeName } > not found . " <nl> - errors . push <nl> for check in type . checks <nl> if error = check value <nl> errors . push error <nl>
+Fix typo
+https://github.com/rstudio/rstudio.git
+
+mmm a / SpongeCommon <nl> ppp b / SpongeCommon <nl> - Subproject commit e84c0d08c52eded60589180ad9172587ed0c1bd8 <nl> + Subproject commit 98d239173c345239072d33086a5938219bdd41c7 <nl>
+Bump common ref for isAreaLoaded fix .
+https://github.com/SpongePowered/SpongeForge.git
+
+mmm a / src / main / resources / assets / stylesheets / airpal . css <nl> ppp b / src / main / resources / assets / stylesheets / airpal . css <nl> body { <nl> border - bottom : 1px solid # d6d9dc ; <nl> background - image : linear - gradient ( # fff , # f7f8fb ) ; <nl> } <nl> + <nl> + . selectize - control . multi . selectize - input > div { <nl> + padding : 1px 3px 1px 6px ; <nl> + } <nl>
+Add padding to selected table / partition
+https://github.com/airbnb/airpal.git
+
+mmm a / openid / openid . gradle <nl> ppp b / openid / openid . gradle <nl> dependencies { <nl> provided ' javax . servlet : servlet - api : 2 . 5 ' <nl> - runtime ' org . apache . httpcomponents : httpclient : 4 . 1 . 2 ' <nl> - } <nl> \ No newline at end of file <nl> + runtime ' org . apache . httpcomponents : httpclient : 4 . 1 . 1 ' <nl> + } <nl>
+Downgrade openid to use HttpClient 4 . 1 . 1 to avoid bug in openid4java ' s usage of HttpClient
+https://github.com/spring-projects/spring-security.git
+
+Binary files a / xutils / libs / armeabi - v7a / libwebpbackport . so and b / xutils / libs / armeabi - v7a / libwebpbackport . so differ <nl> Binary files a / xutils / libs / armeabi / libwebpbackport . so and b / xutils / libs / armeabi / libwebpbackport . so differ <nl> Binary files a / xutils / libs / x86 / libwebpbackport . so and b / xutils / libs / x86 / libwebpbackport . so differ <nl>
+update libwebp
+https://github.com/wyouflf/xUtils3.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> gradlew <nl> gradlew . bat <nl> / gradle / <nl> + <nl> + gradle . properties <nl>
+ignore gradle . properties
+https://github.com/greenrobot/greenDAO.git
+
+mmm a / release - notes / VERSION <nl> ppp b / release - notes / VERSION <nl> Fixes : <nl> * [ Issue # 144 ] : MissingNode . isValueNode ( ) should return ' false ' <nl> ( reported by ' fge @ github ' ) <nl> + * [ Issue # 146 ] : Creator properties were not being renamed as expected <nl> + ( contributed by Christoper C ) <nl> Improvements : <nl>
+Update release notes wrt # 146
+https://github.com/FasterXML/jackson-databind.git
+
+mmm a / npm - shrinkwrap . json <nl> ppp b / npm - shrinkwrap . json <nl> - <nl> { <nl> " name " : " react - native " , <nl> " version " : " 0 . 12 . 0 " , <nl>
+Remove extra newline in npm - shrinkwrap .
+https://github.com/facebook/react-native.git
+
+deleted file mode 100644 <nl> index fad8b87535 . . 0000000000 <nl> mmm a / Osmand - kernel / pthread / . gitignore <nl> ppp / dev / null <nl> - pthreads_library / <nl> - build * <nl>
+We don ' t need pthread
+https://github.com/osmandapp/Osmand.git
+
+mmm a / src / test / java / com / zaxxer / hikari / TestJNDI . java <nl> ppp b / src / test / java / com / zaxxer / hikari / TestJNDI . java <nl> public class TestJNDI <nl> } <nl> } <nl> + @ SuppressWarnings ( " unchecked " ) <nl> private class BogusContext extends AbstractContext <nl> { <nl> @ Override <nl>
+Suppress unchecked warning
+https://github.com/brettwooldridge/HikariCP.git
+
+deleted file mode 100644 <nl> index aeb3b978 . . 00000000 <nl> Binary files a / libs / asmack - android - 4 . jar and / dev / null differ <nl> deleted file mode 100644 <nl> index c380b2e9 . . 00000000 <nl> mmm a / libs / asmack - android - 4 . jar . properties <nl> ppp / dev / null <nl> - src = . . / external / asmack / build / src / trunk <nl>
+upgrading asmack jar to support custom ciphersuites
+https://github.com/guardianproject/ChatSecureAndroid.git
+
+mmm a / source / com / intellij / psi / impl / source / PsiFieldImpl . java <nl> ppp b / source / com / intellij / psi / impl / source / PsiFieldImpl . java <nl> public class PsiFieldImpl extends JavaStubPsiElement < PsiFieldStub > implements Ps <nl> return getInitializerText ( ) ! = null ; <nl> } <nl> catch ( InitializerTooLongException e ) { <nl> - getNode ( ) ; <nl> - return hasInitializer ( ) ; <nl> + return true ; <nl> } <nl> } <nl>
+Fix SOE .
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / portal - web / docroot / html / portlet / layout_set_prototypes / edit_layout_set_prototype . jsp <nl> ppp b / portal - web / docroot / html / portlet / layout_set_prototypes / edit_layout_set_prototype . jsp <nl> else { <nl> if ( group . isLayoutSetPrototype ( ) ) { <nl> layoutSetPrototype = LayoutSetPrototypeLocalServiceUtil . fetchLayoutSetPrototype ( group . getClassPK ( ) ) ; <nl> + <nl> + layoutSetPrototypeId = layoutSetPrototype . getLayoutSetPrototypeId ( ) ; <nl> } <nl> } <nl>
+LPS - 54918 Add missing assignment
+https://github.com/liferay/liferay-portal.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < properties > <nl> < jackson . version > 2 . 1 . 1 < / jackson . version > <nl> < spring . version > 3 . 0 . 7 . RELEASE < / spring . version > <nl> + < project . build . sourceEncoding > UTF - 8 < / project . build . sourceEncoding > <nl> < / properties > <nl> < dependencies > <nl>
+Set the source encoding to UTF - 8 to remove a maven warning when building
+https://github.com/aws/aws-sdk-java.git
+
+mmm a / app / build . gradle <nl> ppp b / app / build . gradle <nl> apply plugin : ' com . android . application ' <nl> android { <nl> compileSdkVersion 21 <nl> - buildToolsVersion " 21 . 1 . 1 " <nl> + buildToolsVersion " 21 . 1 . 2 " <nl> defaultConfig { <nl> applicationId " io . github . izzyleung . zhihudailypurify " <nl>
+Use the latest version of Android Build Tools
+https://github.com/izzyleung/ZhihuDailyPurify.git
+
+mmm a / VERSION . txt <nl> ppp b / VERSION . txt <nl> + jetty - 9 . 0 . 3 - SNAPSHOT <nl> + <nl> jetty - 9 . 0 . 2 . v20130417 - 17 April 2013 <nl> + 364921 FIN WAIT sockets <nl> + 402885 reuse Deflaters in GzipFilter <nl>
+set dev
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / core / java / android / webkit / WebView . java <nl> ppp b / core / java / android / webkit / WebView . java <nl> public class WebView extends AbsoluteLayout <nl> * { @ link KeyChain . ACTION_STORAGE_CHANGED } <nl> * <nl> * @ param resultCallback A callback to be invoked when client certs are cleared . <nl> + * The embedder can pass null if not interested in the callback . <nl> * <nl> * TODO ( sgurun ) unhide <nl> * @ hide <nl>
+Clarify a use case .
+https://github.com/android/platform_frameworks_base.git
+
+new file mode 100644 <nl> index 00000000 . . afde6ba9 <nl> Binary files / dev / null and b / jmxtrans / doc / misc / logos / icon_IntelliJIDEA . png differ <nl>
+adding IntellJ logo
+https://github.com/jmxtrans/jmxtrans.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> protected void onActivityResult ( int requestCode , int resultCode , Intent data ) { <nl> resultDisplayStr = " Scan was canceled . " ; <nl> } <nl> / / do something with resultDisplayStr , maybe display it in a textView <nl> - / / resultTextView . setText ( resultStr ) ; <nl> + / / resultTextView . setText ( resultDisplayStr ) ; <nl> } <nl> / / else handle other activity results <nl> } <nl>
+Fixed typo in sample code .
+https://github.com/card-io/card.io-Android-SDK.git
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> - VERSION_NAME = 0 . 2 . 1 - SNAPSHOT <nl> - VERSION_CODE = 5 <nl> + VERSION_NAME = 0 . 2 . 2 <nl> + VERSION_CODE = 6 <nl> GROUP = com . github . castorflex . smoothprogressbar <nl> POM_DESCRIPTION = Android Library make smooth progress bars <nl>
+Prepared version code / name for release
+https://github.com/castorflex/SmoothProgressBar.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 0 . 11 . 0 <nl> + * STORM - 1189 : Maintain wire compatability with 0 . 10 . x versions of storm . <nl> * STORM - 1185 : replace nimbus . host with nimbus . seeds <nl> * STORM - 1164 : Code cleanup for typos , warnings and conciseness . <nl> * STORM - 902 : Simple Log Search . <nl>
+Added STORM - 1189 to Changelog
+https://github.com/apache/storm.git
+
+mmm a / owncloud - android - library <nl> ppp b / owncloud - android - library <nl> - Subproject commit 5130a93ef576f0c75d852840355672551fea2e9c <nl> + Subproject commit 1d95320277846c082cda2bfcfbbfeb251d03fcc4 <nl>
+Updated reference to library with updated SingleSessionManager
+https://github.com/owncloud/android.git
+
+mmm a / package . json <nl> ppp b / package . json <nl> { <nl> " name " : " cordova - android " , <nl> - " version " : " 5 . 2 . 2 " , <nl> + " version " : " 5 . 3 . 0 - dev " , <nl> " description " : " cordova - android release " , <nl> " bin " : { <nl> " create " : " bin / create " <nl>
+Set VERSION to 5 . 3 . 0 - dev ( via coho )
+https://github.com/apache/cordova-android.git
+
+mmm a / h2o - test - integ / tests / flow / index . list <nl> ppp b / h2o - test - integ / tests / flow / index . list <nl> airlines_all . flow <nl> 100KRows2 - 5Cols . flow <nl> 100KRows3KCols . flow <nl> 1MRows3KCols . flow <nl> + covtype_data . flow <nl> + adult_2013_census . flow <nl>
+Added tests to index
+https://github.com/h2oai/h2o-3.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> the Eclipse Foundation <nl> under the terms of the GNU Lesser General Public License version 3 . 0 <nl> as published by the Free Software Foundation . <nl> ` ` ` <nl> + <nl> + [ ! [ Bitdeli Badge ] ( https : / / d2weczhvl823v0 . cloudfront . net / puniverse / quasar / trend . png ) ] ( https : / / bitdeli . com / free " Bitdeli Badge " ) <nl>
+Added Bitdeli badge
+https://github.com/puniverse/quasar.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> buildscript { <nl> maven { <nl> url " https : / / dl . bintray . com / wire - android / third - party " <nl> } <nl> - mavenCentral ( ) <nl> jcenter ( ) <nl> + mavenCentral ( ) <nl> } <nl> dependencies { <nl>
+Switch jcenter / mavencentral order
+https://github.com/wireapp/wire-android.git
+
+mmm a / enterprise / com / pom . xml <nl> ppp b / enterprise / com / pom . xml <nl> < dependency > <nl> < groupId > junit < / groupId > <nl> < artifactId > junit < / artifactId > <nl> - < version > 4 . 7 < / version > <nl> - < scope > test < / scope > <nl> < / dependency > <nl> < dependency > <nl> < groupId > org . neo4j < / groupId > <nl>
+use the default junit version .
+https://github.com/neo4j/neo4j.git
+
+mmm a / src / main / tools / process - wrapper . c <nl> ppp b / src / main / tools / process - wrapper . c <nl> / / die with raise ( SIGTERM ) even if the child process handles SIGTERM with <nl> / / exit ( 0 ) . <nl> + # ifndef _GNU_SOURCE <nl> # define _GNU_SOURCE <nl> + # endif <nl> # include < errno . h > <nl> # include < fcntl . h > <nl>
+only define _GNU_SOURCE if it wasn ' t defined yet ,
+UNKNOWN
+
+mmm a / src / test / java / org / apache / storm / flux / TCKTest . java <nl> ppp b / src / test / java / org / apache / storm / flux / TCKTest . java <nl> public class TCKTest { <nl> Config conf = FluxMain . buildConfig ( topologyDef ) ; <nl> StormTopology topology = FluxMain . buildTopology ( topologyDef ) ; <nl> assertNotNull ( topology ) ; <nl> - <nl> + topology . validate ( ) ; <nl> } <nl> } <nl>
+validate the topology
+https://github.com/apache/storm.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < ? xml version = " 1 . 0 " encoding = " UTF - 8 " ? > <nl> - < ! - - <nl> + < ! - - <nl> * Copyright 2009 Red Hat , Inc . <nl> * <nl> * Red Hat licenses this file to you under the Apache License , version 2 . 0 <nl>
+Testing e - mail notification
+https://github.com/netty/netty.git
+
+Binary files a / gradle / wrapper / gradle - wrapper . jar and b / gradle / wrapper / gradle - wrapper . jar differ <nl>
+Generate wrapper with 2 . 7 - rc - 1
+https://github.com/gradle/gradle.git
+
+mmm a / library / src / main / res / values / dimens . xml <nl> ppp b / library / src / main / res / values / dimens . xml <nl> < dimen name = " md_icon_margin " > 16dp < / dimen > <nl> < dimen name = " md_listitem_margin_left " > 24dp < / dimen > <nl> < dimen name = " md_action_corner_radius " > 2dp < / dimen > <nl> - <nl> < / resources > <nl> \ No newline at end of file <nl>
+remove the newline
+https://github.com/afollestad/material-dialogs.git
+
+mmm a / CHANGES . txt <nl> ppp b / CHANGES . txt <nl> Features : <nl> Fixes : <nl> - TSV / CSV exporter bug : Gridworks crashed when there were empty cells . <nl> - Issue 69 : ControlFunctionRegistry now correctly registers Chomp expression as " chomp " key . <nl> + - Issue 66 : Records not excluded with inverted text facet <nl> 1 . 1 Release ( May 27 , 2010 ) <nl>
+Updated change list
+https://github.com/OpenRefine/OpenRefine.git
+
+new file mode 100644 <nl> index 0000000 . . 661fc74 <nl> Binary files / dev / null and b / bundles / persistence / org . openhab . persistence . influxdb / lib / guava - 17 . 0 . jar differ <nl>
+add guava library to git
+https://github.com/openhab/openhab.git
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> POM_NAME = Dexter <nl> POM_ARTIFACT_ID = dexter <nl> POM_PACKAGING = aar <nl> - VERSION_NAME = 2 . 2 . 2 <nl> - VERSION_CODE = 202002 <nl> + VERSION_NAME = 2 . 2 . 3 - SNAPSHOT <nl> + VERSION_CODE = 202003 <nl> GROUP = com . karumi <nl> POM_DESCRIPTION = Dexter is an Android library to handle runtime permissions for Marshmallow easily <nl>
+Prepare library for development
+https://github.com/Karumi/Dexter.git
+
+mmm a / src / main / java / org / graylog2 / restclient / models / StreamRule . java <nl> ppp b / src / main / java / org / graylog2 / restclient / models / StreamRule . java <nl> public class StreamRule { <nl> for ( Type type : Type . values ( ) ) <nl> if ( type . id = = id ) <nl> return type ; <nl> + return null ; <nl> } <nl> } <nl>
+Adding missing default return
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / Libraries / Network / XMLHttpRequestBase . js <nl> ppp b / Libraries / Network / XMLHttpRequestBase . js <nl> class XMLHttpRequestBase { <nl> return ; <nl> } <nl> this . status = status ; <nl> - this . setResponseHeaders ( responseHeaders ) ; <nl> + this . setResponseHeaders ( responseHeaders | | { } ) ; <nl> this . responseText = responseText ; <nl> this . setReadyState ( this . DONE ) ; <nl> } <nl>
+Fix JS error stacktraces on Android
+https://github.com/facebook/react-native.git
+
+mmm a / runtime / CSharp / Antlr4 . Runtime . Test / Java . g4 <nl> ppp b / runtime / CSharp / Antlr4 . Runtime . Test / Java . g4 <nl> variableModifiers <nl> ; <nl> statement <nl> - @ leftfactor { catches } <nl> + / / @ leftfactor { catches } <nl> : block <nl> | ASSERT expression ( ' : ' expression ) ? ' ; ' <nl> | ' if ' parExpression statement ( ' else ' statement ) ? <nl>
+Remove automatic left factoring declaration from Java . g4 since the processing is currently very slow
+https://github.com/antlr/antlr4.git
+
+new file mode 100644 <nl> index 0000000000 . . a6b3daec93 <nl> mmm / dev / null <nl> ppp b / OsmAnd / res / values - be - rLatn / phrases . xml <nl> + < ? xml version = " 1 . 0 " encoding = " utf - 8 " ? > <nl> + < resources > < / resources > <nl> \ No newline at end of file <nl>
+Added translation using Weblate ( Belarusian ( latin ) )
+https://github.com/osmandapp/Osmand.git
+
+mmm a / app / build . gradle <nl> ppp b / app / build . gradle <nl> android { <nl> defaultConfig { <nl> minSdkVersion 11 <nl> targetSdkVersion 23 <nl> - versionCode 112 <nl> - versionName ' 1 . 1 . 2 ' <nl> + versionCode 120 <nl> + versionName ' 1 . 2 . 0 ' <nl> applicationVariants . all { variant - > <nl> variant . outputs . each { output - > <nl>
+update version of sample app
+https://github.com/mikepenz/FastAdapter.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> Under ` . addPackage ( new MainReactPackage ( ) ) ` : <nl> style = { styles . backgroundVideo } / > <nl> / / Later on in your styles . . <nl> - var styles = Stylesheet . create ( { <nl> + var styles = StyleSheet . create ( { <nl> backgroundVideo : { <nl> position : ' absolute ' , <nl> top : 0 , <nl>
+fixed syntax error
+https://github.com/bigbluebutton/bigbluebutton.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > com . github . ata4 < / groupId > <nl> < artifactId > ioutils < / artifactId > <nl> - < version > 00f5c30549f263077424969a5ad0003d439993ea < / version > <nl> + < version > 00f5c30549 < / version > <nl> < / dependency > <nl> < / dependencies > <nl>
+Using shorter version tag for ioutils
+https://github.com/ata4/disunity.git
+
+mmm a / src / biz / bokhorst / xprivacy / PrivacyService . java <nl> ppp b / src / biz / bokhorst / xprivacy / PrivacyService . java <nl> public class PrivacyService { <nl> } <nl> } ; <nl> mHandler . postDelayed ( rProgress , 50 ) ; <nl> + } catch ( NameNotFoundException ex ) { <nl> + latch . countDown ( ) ; <nl> } catch ( Throwable ex ) { <nl> Util . bug ( null , ex ) ; <nl> latch . countDown ( ) ; <nl>
+Catch NameNotFoundException ( support info )
+https://github.com/M66B/XPrivacy.git
+
+similarity index 100 % <nl> rename from metamorphosis - client / src / main / java / com / taobao / metamorphosis / client / extension / spring / XAMetaQMessageSessionFactoryBean . java <nl> rename to metamorphosis - client / src / main / java / com / taobao / metamorphosis / client / extension / spring / XAMetaqMessageSessionFactoryBean . java <nl>
+Rename XAMetaQMessageSessionFactoryBean . java to XAMetaqMessageSessionFactoryBean . java
+https://github.com/killme2008/Metamorphosis.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 2 . 0 . 0 <nl> + * STORM - 1590 : port defmeters / defgauge / defhistogram . . . to java for all of our code to use <nl> * STORM - 1529 : Change default worker temp directory location for workers <nl> * STORM - 1543 : DRPCSpout should always try to reconnect disconnected DRPCInvocationsClient <nl> * STORM - 1528 : Fix CsvPreparableReporter log directory <nl>
+Added STORM - 1590 to changelog
+https://github.com/apache/storm.git
+
+mmm a / py / testdir_release / c9 / test_c9_GLM_airlines_hdfs_multi . py <nl> ppp b / py / testdir_release / c9 / test_c9_GLM_airlines_hdfs_multi . py <nl> class releaseTest ( h2o_common . ReleaseCommon , unittest . TestCase ) : <nl> kwargs = { <nl> ' parser_type ' : ' CSV ' , <nl> ' separator ' : 44 , <nl> - ' header ' : 0 , <nl> + ' header ' : 1 , <nl> # ' delete_on_done ' : 0 , <nl> ' delete_on_done ' : 1 , <nl> } <nl>
+header = 1
+https://github.com/h2oai/h2o-2.git
+
+mmm a / docs / dev / event_timestamp_extractors . md <nl> ppp b / docs / dev / event_timestamp_extractors . md <nl> DataStream < MyEvent > withTimestampsAndWatermarks = <nl> stream . assignTimestampsAndWatermarks ( new BoundedOutOfOrdernessTimestampExtractor < MyEvent > ( Time . seconds ( 10 ) ) { <nl> @ Override <nl> - public long extractAscendingTimestamp ( MyEvent element ) { <nl> + public long extractTimestamp ( MyEvent element ) { <nl> return element . getCreationTime ( ) ; <nl> } <nl> } ) ; <nl>
+fixed timestamp extractor documentation Java example
+https://github.com/apache/flink.git
+
+Binary files a / lib / installer - exclude / libjitsi . jar and b / lib / installer - exclude / libjitsi . jar differ <nl>
+Fixes a dealock in the Windows Audio Session API ( WASAPI ) backend .
+https://github.com/jitsi/jitsi.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> / portal - web / docroot / WEB - INF / src <nl> / portal - web / docroot / WEB - INF / tmp <nl> + / portal - web / docroot / WEB - INF / tld / aui . tld <nl> / portal - web / docroot / WEB - INF / tld / liferay - * . tld <nl> / portal - web / docroot / html / VAADIN <nl>
+LPS - 15480 Ignore pattern for the temporary aui . tld
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 0000000 . . 08e8780 <nl> mmm / dev / null <nl> ppp b / CONTRIBUTORS . md <nl> + # Active Major Contributors <nl> + * Steve Kite ( @ ex3ndr ) <nl> + * Gleb Putintsev ( @ kor - ka ) <nl> + * Nikolay Tatarinov ( @ rockjam ) <nl>
+Create CONTRIBUTORS . md
+https://github.com/deeplearning4j/deeplearning4j.git
+
+mmm a / server / index . php <nl> ppp b / server / index . php <nl> / / Display titles <nl> if ( empty ( $ package_name ) ) { <nl> ? > <nl> - < h1 > XPrivacy < / h1 > <nl> + < h1 > < img src = " ic_launcher . png " alt = " XPrivacy " / > XPrivacy < / h1 > <nl> < p > Crowd sourced restrictions < / p > <nl> < ? php <nl> } else { <nl>
+added icon
+https://github.com/JetBrains/intellij-community.git
+
+deleted file mode 100644 <nl> index f8f0957dc277 . . 000000000000 <nl> Binary files a / lib / portal / json - schema - validator - lib . jar and / dev / null differ <nl>
+Revert " LPS - 46198 Added a jar required by the json - schema - validator library "
+https://github.com/liferay/liferay-portal.git
+
+mmm a / subprojects / integ - test / src / integTest / groovy / org / gradle / integtests / ProjectZipDependencyBug . groovy <nl> ppp b / subprojects / integ - test / src / integTest / groovy / org / gradle / integtests / ProjectZipDependencyBug . groovy <nl> * / <nl> package org . gradle . integtests <nl> + import spock . lang . * <nl> import org . gradle . integtests . fixtures . * <nl> import org . gradle . integtests . fixtures . internal . * <nl>
+add missing import .
+https://github.com/gradle/gradle.git
+
+mmm a / Go / Chapter 1 / Question1_2 / Question_test . go <nl> ppp b / Go / Chapter 1 / Question1_2 / Question_test . go <nl> import ( <nl> " testing " <nl> ) <nl> - func TestIsUniqueChars ( t * testing . T ) { <nl> + func TestReverse ( t * testing . T ) { <nl> cases : = [ ] struct { <nl> input string <nl> expect string <nl>
+fixed the ugly function name
+https://github.com/careercup/ctci.git
+
+mmm a / rajawali / build . gradle <nl> ppp b / rajawali / build . gradle <nl> version = VERSION_NAME <nl> status = ' debug ' <nl> android { <nl> - compileSdkVersion 21 <nl> - buildToolsVersion " 21 . 1 . 2 " <nl> + compileSdkVersion 22 <nl> + buildToolsVersion " 22 . 0 . 0 " <nl> defaultConfig { <nl> minSdkVersion 15 <nl> - targetSdkVersion 21 <nl> + targetSdkVersion 22 <nl> versionCode 1 <nl> versionName " 1 . 0 " <nl> } <nl>
+Updated build tools and sdk
+https://github.com/Rajawali/Rajawali.git
+
+Binary files a / Examples / UIExplorer / UIExplorerTests / ReferenceImages / Examples - UIExplorer - UIExplorerApp / testTextExampleSnapshot_1 @ 2x . png and b / Examples / UIExplorer / UIExplorerTests / ReferenceImages / Examples - UIExplorer - UIExplorerApp / testTextExampleSnapshot_1 @ 2x . png differ <nl>
+Fix TextExample snapshot reference image again .
+https://github.com/facebook/react-native.git
+
+similarity index 100 % <nl> rename from R / tests / testdir_algos / deeplearning / runit_DeepLearning_imbalance . R <nl> rename to R / tests / testdir_algos / deeplearning / runit_DeepLearning_imbalance_large . R <nl>
+rename deeplearning test to have _large suffix
+https://github.com/h2oai/h2o-2.git
+
+mmm a / SpongeCommon <nl> ppp b / SpongeCommon <nl> - Subproject commit bd6feb700a952d3bd8ec9d9658298b8fa34b042f <nl> + Subproject commit 2bb947f7c36300f672261322d5b5ecd7d7df4eaa <nl>
+Bump common for API update of EntityDamageSource .
+https://github.com/SpongePowered/SpongeForge.git
+
+mmm a / JodaTime / src / example / org / joda / example / time / DateTimeBrowser . java <nl> ppp b / JodaTime / src / example / org / joda / example / time / DateTimeBrowser . java <nl> public class DateTimeBrowser extends JFrame { <nl> " DayOfMon " , <nl> " DayOfYr " , <nl> " WeekOfWY " , <nl> - " YearOfWY " , <nl> + " Weekyear " , <nl> " MonOfYr " , <nl> " Year " <nl> } ; <nl>
+Fix column name .
+https://github.com/JodaOrg/joda-time.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> install : mvn install - DskipTests = true <nl> notifications : <nl> email : <nl> - okrammarko @ gmail . com <nl> - - spmallette @ gmail . com <nl> + - spmva @ genoprime . com <nl> - parcour @ gmail . com <nl> - me @ matthiasb . com <nl> - l . garulli @ gmail . com <nl>
+Changed email address for travis
+https://github.com/tinkerpop/gremlin.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> Services nowadays often consist of many different components , communicating amon <nl> * Tomcat 6 / 7 <nl> * Spring <nl> * Apache HTTP Client 4 . x , JDK HttpConnector <nl> - * MySQL , Oracle , MSSQL , CUBRID <nl> + * MySQL , Oracle , MSSQL , CUBRID , DBCP <nl> * iBATIS , MyBatis <nl> * Arcus , Memcached , Redis <nl>
+added DBCP to Supported Modules in README
+https://github.com/naver/pinpoint.git
+
+mmm a / actor - apps / core - js / build . gradle <nl> ppp b / actor - apps / core - js / build . gradle <nl> gwt { <nl> compiler { <nl> strict = true ; <nl> style = " OBF " <nl> - enableClosureCompiler = true ; <nl> + enableClosureCompiler = false ; <nl> disableClassMetadata = true ; <nl> disableCastChecking = true ; <nl> } <nl>
+Disabling closure
+https://github.com/actorapp/actor-platform.git
+
+mmm a / CHANGELOG <nl> ppp b / CHANGELOG <nl> + 1 . 8 . 3 <nl> + - - - - - <nl> + <nl> 1 . 8 . 2 <nl> - - - - - - <nl> ( RB = 131451 ) <nl> mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> - version = 1 . 8 . 1 <nl> + version = 1 . 8 . 2 <nl> sonatypeUsername = please_set_in_home_dir_if_uploading_to_maven_central <nl> sonatypePassword = please_set_in_home_dir_if_uploading_to_maven_central <nl>
+Bump pegasus to 1 . 8 . 2 to get ' comma in batch_get ids ' fix out
+UNKNOWN
+
+mmm a / SpongeCommon <nl> ppp b / SpongeCommon <nl> - Subproject commit 55a43ab2e3264716fd38f75675ae8c5b60945e2a <nl> + Subproject commit fd410579d8af65563f9fb86d2b69ddfdad34546a <nl>
+Bump common ref .
+https://github.com/SpongePowered/SpongeForge.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> def configDir = new File ( rootDir , ' config ' ) <nl> buildscript { <nl> repositories { <nl> mavenCentral ( ) <nl> - mavenLocal ( ) <nl> maven { url ' https : / / oss . sonatype . org / content / repositories / snapshots ' } <nl> jcenter ( ) <nl> + mavenLocal ( ) <nl> } <nl> dependencies { <nl>
+Reordering the build repositories in the hope that this fixes the jenkins build .
+https://github.com/mongodb/morphia.git
+
+mmm a / version . gradle <nl> ppp b / version . gradle <nl> allprojects { <nl> ext { <nl> - shortVersion = ' 4 . 1 . 2 ' <nl> - isSnapshot = false <nl> + shortVersion = ' 4 . 1 . 3 ' <nl> + isSnapshot = true <nl> jxmppVersion = ' 0 . 4 . 2 - beta1 ' <nl> smackMinAndroidSdk = 8 <nl> } <nl>
+Smack 4 . 1 . 3 - SNAPSHOT
+https://github.com/igniterealtime/Smack.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> License <nl> See the License for the specific language governing permissions and <nl> limitations under the License . <nl> - [ java ] https : / / en . wikipedia . org / wiki / Java_ ( programming_language ) <nl> + [ java ] : https : / / en . wikipedia . org / wiki / Java_ ( programming_language ) <nl>
+missing colon
+https://github.com/google/auto.git
+
+mmm a / twidere / build . gradle <nl> ppp b / twidere / build . gradle <nl> android { <nl> applicationId " org . mariotaku . twidere " <nl> minSdkVersion 14 <nl> targetSdkVersion 25 <nl> - versionCode 244 <nl> - versionName ' 3 . 3 . 26 ' <nl> + versionCode 245 <nl> + versionName ' 3 . 3 . 27 ' <nl> multiDexEnabled true <nl> buildConfigField ' boolean ' , ' LEAK_CANARY_ENABLED ' , ' Boolean . parseBoolean ( " true " ) ' <nl>
+updated version
+https://github.com/Yalantis/Phoenix.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> _sass_cache_ * . css <nl> / support - tomcat / classes <nl> / support - tomcat / support - tomcat * . jar <nl> + / test - results <nl> + <nl> / tools / maven / * . asc <nl> / tools / liferay - doclet <nl>
+LPS - 27263 Add gitignore
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 0000000 . . 2bb760c <nl> Binary files / dev / null and b / art / jd_reverse_express . png differ <nl>
+add png
+https://github.com/baoyachi/StepView.git
+
+mmm a / src / org / mockito / internal / progress / ArgumentMatcherStorage . java <nl> ppp b / src / org / mockito / internal / progress / ArgumentMatcherStorage . java <nl> import java . util . List ; <nl> import org . hamcrest . Matcher ; <nl> + @ SuppressWarnings ( " unchecked " ) <nl> public interface ArgumentMatcherStorage { <nl> EmptyReturnValues reportMatcher ( Matcher matcher ) ; <nl>
+removed some compiler warnings
+https://github.com/mockito/mockito.git
+
+similarity index 100 % <nl> rename from testsuite / 1486 / test . seq <nl> rename to testsuite / 1846 / test . seq <nl>
+fixed test name
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / subprojects / plugins / plugins . gradle <nl> ppp b / subprojects / plugins / plugins . gradle <nl> dependencies { <nl> compile libraries . slf4j_api <nl> compile ' org . testng : testng : 5 . 14 . 10 ' <nl> - testCompile libraries . xmlunit <nl> testCompile ' net . sourceforge . nekohtml : nekohtml : 1 . 9 . 14 ' <nl> } <nl>
+Removed unused dependency .
+https://github.com/gradle/gradle.git
+
+mmm a / third_party / gif_encoder / build . gradle <nl> ppp b / third_party / gif_encoder / build . gradle <nl> android { <nl> buildToolsVersion ' 19 . 1 . 0 ' <nl> defaultConfig { <nl> - applicationId ' com . bumptech . glide . gifencod : ' <nl> + applicationId ' com . bumptech . glide . gifencoder ' <nl> minSdkVersion 10 <nl> targetSdkVersion 19 <nl> } <nl>
+Fix gif encoder application id .
+https://github.com/bumptech/glide.git
+
+mmm a / version . properties <nl> ppp b / version . properties <nl> - version = 1 . 9 . 1 - SNAPSHOT <nl> \ No newline at end of file <nl> + version = 1 . 9 . 0 <nl> \ No newline at end of file <nl>
+Set the correct version
+https://github.com/mockito/mockito.git
+
+new file mode 100644 <nl> index 0000000 . . f350b16 <nl> Binary files / dev / null and b / ClassySharkWS / src / resources / ic_settings . png differ <nl>
+Adds settings icon
+https://github.com/google/android-classyshark.git
+
+Binary files a / lib / pty4j - 0 . 3 . jar and b / lib / pty4j - 0 . 3 . jar differ <nl>
+Updated pty4j library version - support search native libraries in " libpty " subfolder
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> android : <nl> components : <nl> # The BuildTools version used by NewPipe <nl> - tools <nl> - - build - tools - 23 . 0 . 2 <nl> + - build - tools - 23 . 0 . 3 <nl> # The SDK version used to compile NewPipe <nl> - android - 24 <nl>
+fix build tooles for CI
+https://github.com/theScrabi/NewPipe.git
+
+mmm a / NOTICE . txt <nl> ppp b / NOTICE . txt <nl> Android Async Http Client library <nl> - Copyright ( c ) 2011 - 2014 James Smith < james @ loopj . com > <nl> + Copyright ( c ) 2011 - 2015 James Smith < james @ loopj . com > <nl> http : / / loopj . com <nl> This product includes software developed by <nl>
+Fix copyright year in NOTICE . txt .
+https://github.com/loopj/android-async-http.git
+
+mmm a / services / java / com / android / server / PowerManagerService . java <nl> ppp b / services / java / com / android / server / PowerManagerService . java <nl> class PowerManagerService extends IPowerManager . Stub <nl> public void enableUserActivity ( boolean enabled ) { <nl> synchronized ( mLocks ) { <nl> mUserActivityAllowed = enabled ; <nl> - mLastEventTime = SystemClock . uptimeMillis ( ) ; / / we might need to pass this in <nl> } <nl> } <nl>
+Do not advance mLastEventTime when enabling or disabling user activity .
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> buildscript { <nl> } <nl> } <nl> + subprojects { <nl> + group = GROUP <nl> + version = VERSION_NAME <nl> + } <nl> + <nl> ext { <nl> minSdkVersion = 15 <nl> compileSdkVersion = 22 <nl>
+Fixed missing information
+https://github.com/trello/RxLifecycle.git
+
+mmm a / SpongeCommon <nl> ppp b / SpongeCommon <nl> - Subproject commit 6713abecdcaa9c19de20038f970f7ce76c604984 <nl> + Subproject commit 796be7d451db33f685bd624e49aaa6338a4340c7 <nl>
+Update SpongeCommon for Mob entity cast fix
+https://github.com/SpongePowered/SpongeForge.git
+
+new file mode 100644 <nl> index 00000000 . . e4adb66b <nl> Binary files / dev / null and b / doc / images / gremlin - painting . png differ <nl> Binary files a / doc / images / sql2gremlin - logo . pdf and b / doc / images / sql2gremlin - logo . pdf differ <nl> Binary files a / doc / images / sql2gremlin - logo . png and b / doc / images / sql2gremlin - logo . png differ <nl>
+added more gremlin pictures .
+https://github.com/tinkerpop/gremlin.git
+
+mmm a / jps / src / org / jetbrains / jps / Project . groovy <nl> ppp b / jps / src / org / jetbrains / jps / Project . groovy <nl> class Project { <nl> if ( stagePrinter ! = null ) { <nl> stagePrinter ( message ) <nl> } <nl> - <nl> - info ( message ) <nl> + else { <nl> + info ( message ) <nl> + } <nl> } <nl> def info ( String message ) { <nl>
+do not ant . info ( ) stage message if state printer is assigned
+https://github.com/JetBrains/intellij-community.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > org . graylog . plugins < / groupId > <nl> < artifactId > usage - statistics < / artifactId > <nl> - < version > 1 . 1 . 0 < / version > <nl> + < version > 1 . 1 . 1 < / version > <nl> < scope > provided < / scope > <nl> < / dependency > <nl> < / dependencies > <nl>
+Upgrade Anonymous Usage Statistics to version 1 . 1 . 1
+https://github.com/Graylog2/graylog2-server.git
+
+mmm a / build . properties <nl> ppp b / build . properties <nl> tomcat . manager . password = tomcat <nl> tomcat . context = / voldemort <nl> # # Release <nl> - curr . release = 0 . 56 . 1 <nl> + curr . release = 0 . 57 <nl>
+Bumping version to 0 . 57 .
+https://github.com/voldemort/voldemort.git
+
+mmm a / core / java / android / net / LocalSocket . java <nl> ppp b / core / java / android / net / LocalSocket . java <nl> import java . net . SocketOptions ; <nl> * / <nl> public class LocalSocket implements Closeable { <nl> - private LocalSocketImpl impl ; <nl> + private final LocalSocketImpl impl ; <nl> private volatile boolean implCreated ; <nl> private LocalSocketAddress localAddress ; <nl> private boolean isBound ; <nl>
+Make a field final .
+https://github.com/android/platform_frameworks_base.git
+
+similarity index 100 % <nl> rename from h2o - py / tests / testdir_misc / pyunit_NOPASS_weights_api . py <nl> rename to h2o - py / tests / testdir_misc / pyunit_weights_api . py <nl>
+Bring back the test from NOPASS .
+https://github.com/h2oai/h2o-3.git
+
+mmm a / res / layout / restrictionlist . xml <nl> ppp b / res / layout / restrictionlist . xml <nl> android : layout_width = " match_parent " <nl> android : layout_height = " wrap_content " <nl> android : layout_alignTop = " @ id / elvRestriction " <nl> + android : layout_marginRight = " @ dimen / activity_horizontal_margin " <nl> android : orientation = " vertical " <nl> android : visibility = " gone " > <nl>
+Fix details tutorial margin
+https://github.com/M66B/XPrivacy.git
+
+mmm a / portal - impl / src / com / liferay / portal / verify / VerifyCalendar . java <nl> ppp b / portal - impl / src / com / liferay / portal / verify / VerifyCalendar . java <nl> public class VerifyCalendar extends VerifyProcess { <nl> " ' null ' ) " ) ; <nl> } <nl> + @ SuppressWarnings ( " deprecation " ) <nl> protected void verifyNoAssets ( ) throws Exception { <nl> List < CalEvent > events = CalEventLocalServiceUtil . getNoAssetEvents ( ) ; <nl>
+LPS - 43918 Add SuppressWarnig
+https://github.com/liferay/liferay-portal.git
+
+mmm a / portal - impl / src / com / liferay / portlet / social / util / SocialConfigurationUtil . java <nl> ppp b / portal - impl / src / com / liferay / portlet / social / util / SocialConfigurationUtil . java <nl> public class SocialConfigurationUtil { <nl> if ( participationValueElement ! = null ) { <nl> increment = GetterUtil . getInteger ( <nl> participationValueElement . getText ( ) ) ; <nl> - <nl> } <nl> activityCounterDefinition . setIncrement ( increment ) ; <nl>
+LPS - 24377 Explicitly set contribution and participation values to 0 when they are not defined in xml
+https://github.com/liferay/liferay-portal.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < artifactId > log4j < / artifactId > <nl> < version > 1 . 2 . 16 < / version > <nl> < scope > runtime < / scope > <nl> + < optional > true < / optional > <nl> < / dependency > <nl> < dependency > <nl>
+Make log4j an optional dependency
+https://github.com/elastic/elasticsearch.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> apply plugin : ' idea ' <nl> - version = ' 2 . 0 . 7 ' <nl> + version = ' 2 . 0 . 8 ' <nl> def jarVersion = version <nl>
+Bump the version number to 2 . 0 . 8
+https://github.com/JesusFreke/smali.git
+
+mmm a / AUTHORS . md <nl> ppp b / AUTHORS . md <nl> Keep the list sorted please . <nl> * Dane Lipscombe - dane at 77hz . jp <nl> * DongSoo Moon - donxu at naver . com <nl> * Feng Tao - stategrace2013 at gmail . com <nl> + * Jason Cao - mzule4j at gmail . com <nl> * Juyeong - juyeong9 at gmail . com <nl> * Leonardo TaeHwan Kim - liger745547 at gmail . com <nl> * Leonardo YongUk Kim - dalinaum at gmail . com <nl>
+Updated AUTHORS . md
+https://github.com/GDG-Korea/PinterestLikeAdapterView.git
+
+mmm a / xabber / build . gradle <nl> ppp b / xabber / build . gradle <nl> repositories { <nl> } <nl> ext { <nl> - smackVersion = ' 4 . 1 . 3 ' <nl> + smackVersion = ' 4 . 1 . 4 ' <nl> } <nl> dependencies { <nl>
+Smack version updated to 4 . 1 . 4
+https://github.com/redsolution/xabber-android.git
+
+mmm a / modules / jquery / src / main / webapp / jquery / jquery . atmosphere . js <nl> ppp b / modules / jquery / src / main / webapp / jquery / jquery . atmosphere . js <nl> jQuery . atmosphere = function ( ) { <nl> _response . transport = transport ; <nl> _response . status = errorCode ; <nl> _response . state = state ; <nl> + _response . responseBody = messageBody ; <nl> _invokeCallback ( ) ; <nl> } <nl>
+Fix multi tab support regression
+https://github.com/Atmosphere/atmosphere.git
+
+mmm a / client / build . gradle <nl> ppp b / client / build . gradle <nl> task signJars ( type : Sign , dependsOn : [ buildJar , buildJavadocJar , buildSourceJa <nl> } <nl> - install . dependsOn ( [ buildJar , buildJavadocJar , buildSourceJar , signJars ] ) <nl> + install . dependsOn ( [ buildJar , buildJavadocJar , buildSourceJar ] ) <nl> install { <nl> repositories { <nl> mavenInstaller { <nl>
+do not sign locale installed jars
+https://github.com/crate/crate.git
+
+new file mode 100644 <nl> index 000000000000 . . 37a1dc7f02c3 <nl> Binary files / dev / null and b / modules / themes / product - app - theme / . task - cache / product - app - theme . war differ <nl> new file mode 100644 <nl> index 000000000000 . . 0b510e1ed28e <nl> Binary files / dev / null and b / modules / themes / user - theme / . task - cache / user - theme . war differ <nl>
+LPS - 61070 Add cached theme WARs
+https://github.com/liferay/liferay-portal.git
+
+Binary files a / portal - web / third - party / alloy - 2 . 0 . 0pr5 . zip and b / portal - web / third - party / alloy - 2 . 0 . 0pr5 . zip differ <nl>
+Updating Alloy to 0b47964 ; LPS - 34256
+https://github.com/liferay/liferay-portal.git
+
+mmm a / src / test / java / com / google / devtools / build / lib / ideinfo / intellij_info . bzl <nl> ppp b / src / test / java / com / google / devtools / build / lib / ideinfo / intellij_info . bzl <nl> def _aspect_impl ( target , ctx ) : <nl> intellij_info_aspect = aspect ( <nl> implementation = _aspect_impl , <nl> attr_aspects = ALL_DEPS . label + ALL_DEPS . label_list , <nl> + fragments = [ " cpp " ] , <nl> ) <nl>
+Adds configuration fragment requirements for intellij_info_aspect .
+UNKNOWN
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> jdk : <nl> - openjdk6 <nl> - openjdk7 <nl> - oraclejdk7 <nl> + - oraclejdk8 <nl> install : make travis - install <nl> script : make test <nl>
+Add support for jdk8 in travis
+https://github.com/xetorthio/jedis.git
+
+mmm a / python / helpers / pydev / pydev_monkey . py <nl> ppp b / python / helpers / pydev / pydev_monkey . py <nl> def patch_args ( args ) : <nl> if is_python ( args [ 0 ] ) : <nl> try : <nl> indC = args . index ( ' - c ' ) <nl> - except KeyError : <nl> + except ValueError : <nl> indC = - 1 <nl> if indC ! = - 1 : <nl>
+index function throws ValueError not KeyError
+https://github.com/JetBrains/intellij-community.git
+
+Binary files a / screenshot / screenshot . png and b / screenshot / screenshot . png differ <nl>
+update screenshot
+https://github.com/ongakuer/CircleIndicator.git
+
+old mode 100644 <nl> new mode 100755 <nl>
+Made bbb - record executable
+https://github.com/bigbluebutton/bigbluebutton.git
+
+mmm a / moco - runner / build . gradle <nl> ppp b / moco - runner / build . gradle <nl> buildscript { <nl> } <nl> project . ext { <nl> - logbackVersion = ' 1 . 1 . 5 ' <nl> + logbackVersion = ' 1 . 1 . 6 ' <nl> commonsCliVersion = ' 1 . 3 . 1 ' <nl> } <nl>
+upgraded logback to 1 . 1 . 6
+https://github.com/dreamhead/moco.git
+
+Binary files a / testsuite / integration / basic / src / test / resources / web / sec / tg / localhost . keystore and b / testsuite / integration / basic / src / test / resources / web / sec / tg / localhost . keystore differ <nl>
+change the key alias from localhostkey to jboss .
+https://github.com/wildfly/wildfly.git
+
+old mode 100644 <nl> new mode 100755 <nl> old mode 100644 <nl> new mode 100755 <nl> old mode 100644 <nl> new mode 100755 <nl>
+making stress executable
+https://github.com/apache/cassandra.git
+
+mmm a / src / com / jwetherell / algorithms / DataStructures . java <nl> ppp b / src / com / jwetherell / algorithms / DataStructures . java <nl> public class DataStructures { <nl> System . out . println ( " Removing a previously added node " + next ) ; <nl> minHeap . remove ( next ) ; <nl> System . out . println ( minHeap . toString ( ) ) ; <nl> + System . out . println ( ) ; <nl> } <nl> { <nl>
+Fixed formatting of data structure test code
+https://github.com/phishman3579/java-algorithms-implementation.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> language : android <nl> + sudo : false <nl> android : <nl> components : <nl>
+Use new Travis builders
+https://github.com/jdamcd/android-crop.git
+
+mmm a / core / src / main / java / org / acegisecurity / intercept / web / FilterInvocationDefinitionSourceEditor . java <nl> ppp b / core / src / main / java / org / acegisecurity / intercept / web / FilterInvocationDefinitionSourceEditor . java <nl> public class FilterInvocationDefinitionSourceEditor extends PropertyEditorSuppor <nl> source . setMappings ( mappings ) ; <nl> } <nl> - setValue ( source ) ; <nl> + setValue ( source . getDecorated ( ) ) ; <nl> } <nl> } <nl>
+Fix failing tests keeping old behaviour .
+https://github.com/spring-projects/spring-security.git
+
+mmm a / community / src / site / apt / index . apt <nl> ppp b / community / src / site / apt / index . apt <nl> Neo4j <nl> - Neo is a graph database . It is an embedded , disk - based , fully transactional <nl> + Neo4j is a graph database . It is an embedded , disk - based , fully transactional <nl> Java persistence engine that stores data structured in graphs rather than in tables . <nl>
+Fixed a naming issue
+https://github.com/neo4j/neo4j.git
+
+mmm a / py2 / testdir_r / myR . tests <nl> ppp b / py2 / testdir_r / myR . tests <nl> testdir_demos / runit_demo_NOPASS_h2o_impute . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_save_model . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_pcr . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_load_model . R <nl> - testdir_docexamples / runit_NOPASS_Rdoc_glm . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_RF . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_anomaly . R <nl> testdir_docexamples / runit_NOPASS_Rdoc_remove_vec . R <nl>
+don ' t run runit_NOPASS_Rdoc_glm .
+UNKNOWN
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> # <nl> # Thu Dec 04 17 : 56 : 38 CET 2008 <nl> - previousMinor = 5 <nl> + previousMinor = 4 <nl> previousRevision = 0 <nl> previousMajor = 0 <nl>
+Remove 0 . 5 branch to release again .
+https://github.com/gradle/gradle.git
+
+mmm a / React / Modules / RCTDevLoadingView . m <nl> ppp b / React / Modules / RCTDevLoadingView . m <nl> RCT_EXPORT_METHOD ( showMessage : ( NSString * ) message color : ( UIColor * ) color backgro <nl> _label . textAlignment = NSTextAlignmentCenter ; <nl> [ _window addSubview : _label ] ; <nl> - [ _window makeKeyAndVisible ] ; <nl> } <nl> _label . text = message ; <nl>
+Do not make RCTDevLoadingView a keyWindow
+https://github.com/facebook/react-native.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 0 . 9 . 2 - incubating ( unreleased ) <nl> + * STORM - 316 : added validation to registermetrics to have timebucketSizeInSecs > = 1 <nl> * STORM - 315 : Added progress bar when submitting topology <nl> * STORM - 214 : Windows : storm . cmd does not properly handle multiple - c arguments <nl> * STORM - 306 : Add security documentation <nl>
+Added STORM - 316 to Changelog
+https://github.com/apache/storm.git
+
+mmm a / packages / SystemUI / src / com / android / systemui / statusbar / policy / NetworkController . java <nl> ppp b / packages / SystemUI / src / com / android / systemui / statusbar / policy / NetworkController . java <nl> public class NetworkController extends BroadcastReceiver { <nl> mWifiActivityIconId = R . drawable . stat_sys_wifi_inout ; <nl> break ; <nl> case WifiManager . DATA_ACTIVITY_NONE : <nl> + mWifiActivityIconId = 0 ; <nl> break ; <nl> } <nl> } <nl>
+Fix wifi data activity icons
+https://github.com/android/platform_frameworks_base.git
+
+mmm a / README . md <nl> ppp b / README . md <nl> No , because these OS ' es are to closed to implement something like XPrivacy . <nl> * * ( 35 ) Will you restrict . . . ? * * <nl> - * The device manufacturer <nl> + * The device brand / manufacturer <nl> * The device model / product name <nl> * Synchronization state <nl> * Screen locking <nl>
+Updated FAQ
+https://github.com/M66B/XPrivacy.git
+
+similarity index 100 % <nl> rename from engine / src / main / resources / logback . groovy <nl> rename to facades / PC / src / main / resources / logback . groovy <nl> similarity index 100 % <nl> rename from engine / src / main / resources / logback . xml <nl> rename to facades / PC / src / main / resources / logback . xml <nl>
+Moved logging configuration to the PC Facade where it belongs .
+https://github.com/MovingBlocks/Terasology.git
+
+mmm a / src / org / wordpress / android / WPActionBarActivity . java <nl> ppp b / src / org / wordpress / android / WPActionBarActivity . java <nl> public abstract class WPActionBarActivity extends SherlockFragmentActivity imple <nl> public void run ( ) { <nl> startActivity ( i ) ; <nl> } <nl> - } , 350 ) ; <nl> + } , 400 ) ; <nl> } <nl> / * * <nl>
+Increase the delay a little bit when opening a new activity from the MenuDrawer .
+https://github.com/wordpress-mobile/WordPress-Android.git
+
+mmm a / RoboSpice - samples <nl> ppp b / RoboSpice - samples <nl> - Subproject commit 2552bd620499c3a1627aeaacec22d420c948e0af <nl> + Subproject commit 0e588418cde6841ed660b2110c3676c8998c40c3 <nl>
+Modified samples
+https://github.com/stephanenicolas/robospice.git
+
+mmm a / java / keywords . txt <nl> ppp b / java / keywords . txt <nl> start KEYWORD2 <nl> stop KEYWORD2 <nl> breakShape KEYWORD2 <nl> createPath KEYWORD2 <nl> - # dataFile KEYWORD2 <nl> - # dataPath KEYWORD2 <nl> float KEYWORD2 floatconvert_ <nl> int KEYWORD2 intconvert_ <nl> loadMatrix KEYWORD2 <nl>
+Removing internal functions from keywords . txt
+https://github.com/processing/processing.git
+
+new file mode 100644 <nl> index 000000000 . . 8b2b4f9c3 <nl> Binary files / dev / null and b / bigbluebutton - config / web / images / favicon . ico differ <nl>
+updated favicon
+https://github.com/bigbluebutton/bigbluebutton.git
+
+mmm a / common / buildcraft / core / gui / GuiAdvancedInterface . java <nl> ppp b / common / buildcraft / core / gui / GuiAdvancedInterface . java <nl> public abstract class GuiAdvancedInterface extends GuiBuildCraft { <nl> int i2 = ( mouseX - cornerX ) ; <nl> int k2 = mouseY - cornerY ; <nl> drawCreativeTabHoveringText ( s , i2 , k2 ) ; <nl> + RenderHelper . enableGUIStandardItemLighting ( ) ; <nl> } <nl> } <nl> } <nl>
+Fix small rendering bug when item is hovering over AdvancedSlot .
+https://github.com/BuildCraft/BuildCraft.git
+
+mmm a / samples / petclinic / grails - app / conf / BuildConfig . groovy <nl> ppp b / samples / petclinic / grails - app / conf / BuildConfig . groovy <nl> grails . project . dependency . resolution = { <nl> repositories { <nl> grailsHome ( ) <nl> mavenLocal ( ) <nl> - mavenCentral ( ) <nl> + mavenCentral ( ) <nl> + grailsCentral ( ) <nl> } <nl> } <nl>
+add grailsCentral ( ) repo to sample application so dependency resolve
+https://github.com/grails/grails-core.git
+
+mmm a / androidmanifest / README . md <nl> ppp b / androidmanifest / README . md <nl> Maven Usage <nl> < execution > <nl> < phase > generate - sources < / phase > <nl> < goals > <nl> - < goal > generate < / goals > <nl> + < goal > generate < / goal > <nl> < / goals > <nl> < / execution > <nl> < / executions > <nl>
+Fixing maven typo in Readme
+https://github.com/square/dagger.git
+
+new file mode 100644 <nl> index 00000000 . . e5728def <nl> mmm / dev / null <nl> ppp b / . travis . yml <nl> + language : java <nl> + script : " mvn verify " <nl> + jdk : <nl> + - oraclejdk7 <nl> + - oraclejdk8 <nl> + cache : <nl> + directories : <nl> + - $ HOME / . m2 <nl> \ No newline at end of file <nl>
+Add Travis CI config
+https://github.com/OryxProject/oryx.git
+
+new file mode 100644 <nl> index 0000000 . . 0d8edfb <nl> mmm / dev / null <nl> ppp b / README . md <nl> + droidicon <nl> + = = = = = = = = = <nl> + <nl> + 800 + icons for Android . 25 social badges and more ! <nl>
+Create README . md
+https://github.com/singwhatiwanna/dynamic-load-apk.git
+
+Binary files a / . ide / idea - settings . jar and b / . ide / idea - settings . jar differ <nl>
+Exported new IntelliJ IDEA settings containing the updated logo and copyright
+https://github.com/javaslang/javaslang.git
+
+mmm a / vapi / libxml - 2 . 0 . vapi <nl> ppp b / vapi / libxml - 2 . 0 . vapi <nl> namespace Xml { <nl> public Ns * ns ; <nl> public string content ; <nl> public Attr * properties ; <nl> + [ CCode ( cname = " nsDef " ) ] <nl> public Ns * ns_def ; <nl> public ushort line ; <nl> public ushort extra ; <nl>
+correct cname for Xml . Node . ns_def
+UNKNOWN
+
+mmm a / java / org / apache / catalina / core / StandardWrapper . java <nl> ppp b / java / org / apache / catalina / core / StandardWrapper . java <nl> public class StandardWrapper extends ContainerBase <nl> try { <nl> SecurityUtil . doAsPrivilege ( " destroy " , s ) ; <nl> } finally { <nl> - SecurityUtil . remove ( instance ) ; <nl> + SecurityUtil . remove ( s ) ; <nl> } <nl> } else { <nl> s . destroy ( ) ; <nl>
+Fix wrong argument of StandardWrapper . remove ( ) in case when singleThreadModel and instancePool are used .
+https://github.com/apache/tomcat.git
+
+mmm a / SeriesGuide / build . gradle <nl> ppp b / SeriesGuide / build . gradle <nl> if ( project . hasProperty ( ' storePassword ' ) <nl> android . signingConfigs . release . keyAlias = keyAlias <nl> android . signingConfigs . release . keyPassword = keyPassword <nl> } else { <nl> - buildTypes . release . signingConfig = null <nl> + android . buildTypes . release . signingConfig = null <nl> } <nl> \ No newline at end of file <nl>
+Fix signing fallback .
+https://github.com/UweTrottmann/SeriesGuide.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 0 . 11 . 0 <nl> + * STORM - 1395 : Move JUnit dependency to top - level pom <nl> * STORM - 1372 : Merging design and usage documents for distcache <nl> * STORM - 1393 : Update the storm . log . dir function , add doc for logs <nl> * STORM - 1377 : nimbus_auth_test : very short timeouts causing spurious failures <nl>
+Adding STORM - 1395 to CHANGELOG .
+https://github.com/apache/storm.git
+
+mmm a / gradle . properties <nl> ppp b / gradle . properties <nl> group = io . vertx <nl> hazelcastVersion = 2 . 6 . 3 <nl> jacksonCoreVersion = 2 . 2 . 2 <nl> jacksonDatabindVersion = 2 . 2 . 2 <nl> - nettyVersion = 4 . 0 . 10 . Final <nl> + nettyVersion = 4 . 0 . 11 . Final <nl> log4jVersion = 1 . 2 . 16 <nl> slf4jVersion = 1 . 6 . 2 <nl> junitVersion = 4 . 10 <nl>
+Upgrade netty to 4 . 0 . 11 .
+https://github.com/eclipse/vert.x.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> zip . doFirst { task - > <nl> } <nl> task release ( dependsOn : [ zip , " : plugins - attachments : release " ] ) < < { <nl> - ant . delete ( dir : explodedDistDir ) <nl> + / / ant . delete ( dir : explodedDistDir ) <nl> } <nl> task wrapper ( type : Wrapper ) { <nl>
+bring back the exploded plugin
+https://github.com/elastic/elasticsearch.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> build <nl> out <nl> reports <nl> . DS_Store <nl> + . idea <nl> new file mode 100644 <nl> index 00000000 . . c6b62618 <nl> mmm / dev / null <nl> ppp b / gradle . properties <nl> + # Default config properties , can be overridden by ~ / . gradle / gradle . properties <nl> + sonatypeUsername = <nl> + sonatypePassword = <nl>
+Add project default gradle . properties , to avoid build failures from missing properties
+https://github.com/dreamhead/moco.git
+
+mmm a / gradle / pomconfigurer . gradle <nl> ppp b / gradle / pomconfigurer . gradle <nl> project . pomConfigureClosure = { <nl> contributor { <nl> name ' Jan Weitz ' <nl> } <nl> + contributor { <nl> + name ' Joachim Baumann ' <nl> + } <nl> } <nl> mailingLists { <nl> mailingList { <nl>
+Added Joachim Baumann to the contributors ( cont ' d )
+https://github.com/groovy/groovy-core.git
+
+similarity index 100 % <nl> rename from h2o - core / src / test / java / water / DCTTest . java <nl> rename to h2o - core / src / test / java / hex / DCTTest . java <nl>
+Move hex test to hex directory
+https://github.com/h2oai/h2o-3.git
+
+mmm a / h2o - docs / src / product / flow / RecentChanges . md <nl> ppp b / h2o - docs / src / product / flow / RecentChanges . md <nl> # # H2O <nl> - # # # Shannon ( 3 . 0 . 0 . 27 ) - 7 / 20 / 15 <nl> + # # # Simons ( 3 . 0 . 1 . 1 ) - 7 / 20 / 15 <nl> # # # # New Features <nl>
+Updated release name & number
+https://github.com/h2oai/h2o-3.git
+
+mmm a / bigbluebutton - html5 / app / client / stylesheets / whiteboard . less <nl> ppp b / bigbluebutton - html5 / app / client / stylesheets / whiteboard . less <nl> & : hover { <nl> background : rgba ( 0 , 0 , 0 , 0 . 4 ) ; <nl> } <nl> + & : focus { <nl> + outline : 0 ; <nl> + } <nl> i { <nl> color : black ; <nl> } <nl>
+Removed the blue outline from the whiteboard buttons that are selected .
+https://github.com/bigbluebutton/bigbluebutton.git
+
+mmm a / examples / build . gradle <nl> ppp b / examples / build . gradle <nl> android { <nl> targetSdkVersion 23 <nl> } <nl> + compileOptions { <nl> + sourceCompatibility JavaVersion . VERSION_1_7 <nl> + targetCompatibility JavaVersion . VERSION_1_7 <nl> + } <nl> + <nl> buildTypes { <nl> release { <nl> minifyEnabled false <nl>
+Updates build script for examples to declare java 7
+https://github.com/Rajawali/Rajawali.git
+
+mmm a / math - scala / pom . xml <nl> ppp b / math - scala / pom . xml <nl> < plugin > <nl> < groupId > org . scala - tools < / groupId > <nl> < artifactId > maven - scala - plugin < / artifactId > <nl> + < version > 2 . 15 . 2 < / version > <nl> < executions > <nl> < execution > <nl> < goals > <nl>
+Added version 2 . 15 . 2 to maven - scala - plugin .
+https://github.com/apache/mahout.git
+
+mmm a / subprojects / dependency - management / src / main / java / org / gradle / internal / component / model / LocalComponentDependencyMetadata . java <nl> ppp b / subprojects / dependency - management / src / main / java / org / gradle / internal / component / model / LocalComponentDependencyMetadata . java <nl> public class LocalComponentDependencyMetadata implements LocalOriginDependencyMe <nl> @ Override <nl> public String getDependencyConfiguration ( ) { <nl> - return dependencyConfiguration ; <nl> + return getOrDefaultConfiguration ( dependencyConfiguration ) ; <nl> } <nl> @ Override <nl>
+Fixed failing integration tests
+https://github.com/gradle/gradle.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > com . google . android . maps < / groupId > <nl> < artifactId > maps < / artifactId > <nl> - < version > 16_r2 < / version > <nl> + < version > 16_r3 < / version > <nl> < scope > provided < / scope > <nl> < / dependency > <nl>
+Upgrade dependency to maps from _r2 to _r3 .
+UNKNOWN
+
+similarity index 100 % <nl> rename from acl / pinot2 . 0 . acl <nl> rename to acl / pinot2_0 . acl <nl>
+adding acls
+https://github.com/linkedin/pinot.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> jdk : <nl> - oraclejdk8 <nl> - oraclejdk7 <nl> - openjdk7 <nl> + before_script : <nl> + - echo " MAVEN_OPTS = ' - Xmx1024g - XX : MaxPermSize = 256m ' " > ~ / . mavenrc <nl> after_success : <nl> - mvn clean cobertura : cobertura coveralls : report <nl>
+Update travis config .
+https://github.com/dangdangdotcom/elastic-job.git
+
+mmm a / website / _config . yml <nl> ppp b / website / _config . yml <nl> collections : <nl> output : true <nl> kramdown : <nl> - syntax_highlighter : coderay <nl> \ No newline at end of file <nl> + syntax_highlighter : syntax_highlighter_opts <nl> \ No newline at end of file <nl>
+Change the syntax_highlighter
+https://github.com/qiujuer/Genius-Android.git
+
+mmm a / client / bbb - html5 - client / . gitignore <nl> ppp b / client / bbb - html5 - client / . gitignore <nl> node_modules / <nl> public / images / presentation * <nl> public / js / main - dist . js <nl> docs / * <nl> + log / * <nl> new file mode 100644 <nl> index 000000000 . . e69de29bb <nl>
+Add missing log / dir in the HTML5 client
+https://github.com/bigbluebutton/bigbluebutton.git
+
+Binary files a / wallettemplate / src / main / resources / wallettemplate / checkpoints and b / wallettemplate / src / main / resources / wallettemplate / checkpoints differ <nl>
+Refresh wallet - template checkpoints file .
+https://github.com/bitcoinj/bitcoinj.git
+
+new file mode 100644 <nl> index 0000000 . . ef01e99 <nl> Binary files / dev / null and b / logo . png differ <nl>
+adding logo
+https://github.com/excilys/androidannotations.git
+
+mmm a / trunk / JLanguageTool / src / rules / en / det_a . txt <nl> ppp b / trunk / JLanguageTool / src / rules / en / det_a . txt <nl> ululation <nl> unary <nl> unanimity <nl> unanimous <nl> + unanimously <nl> Unesco <nl> + uni <nl> unicameral <nl> unicameralism <nl> Unicef <nl> unicycle <nl> - unanimously <nl> unicellular <nl> unicorn <nl> unicorns <nl>
+add " uni " ( colloquial for " university " )
+https://github.com/languagetool-org/languagetool.git
+
+mmm a / store - implementation / accumulo - store / pom . xml <nl> ppp b / store - implementation / accumulo - store / pom . xml <nl> < include > com . fasterxml . jackson . * : * < / include > <nl> < include > com . clearspring . analytics : stream <nl> < / include > <nl> + < include > com . yahoo . * < / include > <nl> < / includes > <nl> < / artifactSet > <nl> < / configuration > <nl>
+gh - 257 - added yahoo dependencies in accumulo iterators jar
+https://github.com/GovernmentCommunicationsHeadquarters/Gaffer.git
+
+mmm a / compiler / build . gradle <nl> ppp b / compiler / build . gradle <nl> protobuf { <nl> } <nl> } <nl> generateProtoTasks { <nl> - all ( ) * . dependsOn ' java_pluginExecutable ' <nl> + all ( ) . each { task - > <nl> + task . dependsOn ' java_pluginExecutable ' <nl> + task . inputs . file javaPluginPath <nl> + } <nl> ofSourceSet ( ' test ' ) * . plugins { <nl> grpc { } <nl> } <nl>
+Fix change detection for compiler testing
+https://github.com/grpc/grpc-java.git
+
+mmm a / Dockerfile <nl> ppp b / Dockerfile <nl> FROM centos / wildfly <nl> ADD jaxrs / jaxrs - client / target / jaxrs - client . war / opt / wildfly / standalone / deployments / <nl> - <nl>
+removing an empty line
+https://github.com/javaee-samples/javaee7-samples.git
+
+mmm a / sample / build . gradle <nl> ppp b / sample / build . gradle <nl> android { <nl> targetSdkVersion 23 <nl> versionCode 1 <nl> versionName " 1 . 0 " <nl> - buildConfigField " String " , " PROJECT_URL " , ' " https : / / github . com / renaudcerrato / toggledrawable " ' <nl> + buildConfigField " String " , " PROJECT_URL " , ' " https : / / github . com / renaudcerrato / ToggleDrawable " ' <nl> } <nl> buildTypes { <nl> release { <nl>
+fixed GitHub repository URL
+https://github.com/renaudcerrato/ToggleDrawable.git
+
+mmm a / manual / Makefile <nl> ppp b / manual / Makefile <nl> installfilter : <nl> # <nl> # <nl> mkdir - p $ ( FILTERDEST ) <nl> - cp - fru $ ( FILTERSRC ) / * $ ( FILTERDEST ) <nl> + cp - fr $ ( FILTERSRC ) / * $ ( FILTERDEST ) <nl> copyimages : <nl> # <nl>
+Made the build more Mac - friendly .
+https://github.com/neo4j/neo4j.git
+
+similarity index 100 % <nl> rename from portal - web / docroot / html / portlet / quick_note / css / main . css <nl> rename to modules / apps / quick - note / quick - note - web / src / META - INF / resources / css / main . css <nl>
+LPS - 50748 Move css
+https://github.com/liferay/liferay-portal.git
+
+new file mode 100644 <nl> index 0000000 . . 09f623f <nl> mmm / dev / null <nl> ppp b / keyvalue / client / src / main / java / README . md <nl> + Javadoc placeholder to comply with Sonatype requirements . <nl>
+Add a placeholder file to comply with Sonatype requirements
+https://github.com/Alluxio/alluxio.git
+
+mmm a / build . xml <nl> ppp b / build . xml <nl> < javac <nl> includeantruntime = " false " <nl> - srcdir = " . " <nl> + srcdir = " src " <nl> destdir = " $ { classes . dir } " <nl> classpathref = " classpath " <nl> debug = " true " <nl>
+Fix jar building
+https://github.com/loopj/android-async-http.git
+
+deleted file mode 100644 <nl> index 68deda7 . . 0000000 <nl> Binary files a / gdx - helloworld - android / libs / gdx - backend - android . jar and / dev / null differ <nl>
+fixed android backend . . .
+https://github.com/libgdx/libgdx.git
+
+mmm a / modules / spring - mock - mvc / todo . txt <nl> ppp b / modules / spring - mock - mvc / todo . txt <nl> javadoc <nl> - baseUri ( + log ) <nl> Add static methods ( e . g . get ) to RestAssuredMockMvc <nl>
+Updated todo
+https://github.com/eclipse/vert.x.git
+
+Binary files a / gif / cjj6 . gif and b / gif / cjj6 . gif differ <nl>
+fix some bug . . . . . . 123
+https://github.com/android-cjj/Android-MaterialRefreshLayout.git
+
+mmm a / java / org / apache / catalina / core / StandardService . java <nl> ppp b / java / org / apache / catalina / core / StandardService . java <nl> public class StandardService <nl> / / Validate and update our current component state <nl> if ( log . isInfoEnabled ( ) & & started ) { <nl> log . info ( sm . getString ( " standardService . start . started " ) ) ; <nl> - return ; <nl> } <nl> if ( ! initialized ) <nl>
+Revert previous fix
+https://github.com/apache/tomcat.git
+
+mmm a / design / src / android / support / design / widget / CoordinatorLayout . java <nl> ppp b / design / src / android / support / design / widget / CoordinatorLayout . java <nl> public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen <nl> * <nl> * @ return The current behavior or null if no behavior is specified <nl> * / <nl> - @ NonNull <nl> + @ Nullable <nl> public Behavior getBehavior ( ) { <nl> return mBehavior ; <nl> } <nl>
+Fix annotation of getBehavior
+https://github.com/android/platform_frameworks_support.git
+
+mmm a / build . gradle <nl> ppp b / build . gradle <nl> buildscript { <nl> jcenter ( ) <nl> } <nl> dependencies { <nl> - classpath ' com . android . tools . build : gradle : 2 . 0 . 0 - alpha5 ' <nl> + classpath ' com . android . tools . build : gradle : 2 . 0 . 0 - alpha7 ' <nl> } <nl> } <nl>
+Update gradle build tools
+https://github.com/moezbhatti/qksms.git
+
+mmm a / . gitignore <nl> ppp b / . gitignore <nl> . gradle <nl> build / <nl> - / libs / ShowcaseView / build / <nl> * . iml <nl> / . idea / <nl> ZhihuDailyAPI . md <nl>
+Ignore files
+https://github.com/izzyleung/ZhihuDailyPurify.git
+
+Binary files a / examples / init . js and b / examples / init . js differ <nl>
+Landing a more - robust init . js file , with input from Felipe Gomes .
+https://github.com/jeresig/processing-js.git
+
+mmm a / bigbluebutton - client / src / org / bigbluebutton / modules / chat / ChatUtil . as <nl> ppp b / bigbluebutton - client / src / org / bigbluebutton / modules / chat / ChatUtil . as <nl> package org . bigbluebutton . modules . chat <nl> } <nl> return parsedString ; <nl> + } <nl> } <nl> } <nl> \ No newline at end of file <nl>
+Added missing right brace for parseURLs method .
+https://github.com/bigbluebutton/bigbluebutton.git
+
+mmm a / realm / src / androidTest / java / io / realm / tests / api / RealmTest . java <nl> ppp b / realm / src / androidTest / java / io / realm / tests / api / RealmTest . java <nl> import io . realm . RealmChangeListener ; <nl> import io . realm . RealmList ; <nl> - public class RealmTest extends AndroidTestCase { <nl> + public class ParameterizedTestExample extends AndroidTestCase { <nl> private Realm realm ; <nl>
+Parameterized testing
+https://github.com/realm/realm-java.git
+
+mmm a / version . txt <nl> ppp b / version . txt <nl> - 0 . 90 . 1 - SNAPSHOT <nl> \ No newline at end of file <nl> + 0 . 91 . 0 - SNAPSHOT <nl>
+Prepare next dev iteration
+https://github.com/realm/realm-java.git
+
+Binary files a / res / drawable - ldpi / button_blue_focus . 9 . png and b / res / drawable - ldpi / button_blue_focus . 9 . png differ <nl> Binary files a / res / drawable - ldpi / button_darkgray_disabled . 9 . png and b / res / drawable - ldpi / button_darkgray_disabled . 9 . png differ <nl>
+fixing up a couple more 9 patch images
+https://github.com/wordpress-mobile/WordPress-Android.git
+
+mmm a / pom . xml <nl> ppp b / pom . xml <nl> < dependency > <nl> < groupId > it . unimi . dsi < / groupId > <nl> < artifactId > fastutil < / artifactId > <nl> - < version > 6 . 5 . 7 < / version > <nl> + < version > 7 . 0 . 6 < / version > <nl> < / dependency > <nl> < ! - - Test - - > <nl>
+update fastutil version
+https://github.com/addthis/stream-lib.git
+
+mmm a / CHANGELOG . md <nl> ppp b / CHANGELOG . md <nl> # # 0 . 11 . 0 <nl> + * STORM - 1383 : Supervisors should not crash if nimbus is unavailable <nl> * STORM - 1381 : Client side topology submission hook . <nl> * STORM - 1376 : Performance slowdown due excessive zk connections and log - debugging <nl> * STORM - 1395 : Move JUnit dependency to top - level pom <nl>
+adds STORM - 1383
+https://github.com/apache/storm.git
+
+mmm a / . travis . yml <nl> ppp b / . travis . yml <nl> python : <nl> - " 2 . 6 " <nl> before_install : <nl> - - sudo apt - get install - qq openjdk6 <nl> + - sudo apt - get install - qq openjdk - 6 - jdk <nl> script : . / pants goal clean - all test tests / java / com / twitter / common : all <nl> notifications : <nl> email : <nl>
+Try a different openjdk package name .
+https://github.com/twitter/commons.git
+
+mmm a / src / org / wordpress / android / ui / media / MediaGridFragment . java <nl> ppp b / src / org / wordpress / android / ui / media / MediaGridFragment . java <nl> public class MediaGridFragment extends Fragment implements OnItemClickListener , <nl> mPullToRefreshHelper . setEnabled ( false ) ; <nl> } <nl> mGridView . setMultiSelectModeActive ( isInMultiSelectMode ) ; <nl> - <nl> } <nl> mGridView . setSelection ( savedInstanceState . getInt ( BUNDLE_SCROLL_POSITION , 0 ) ) ; <nl>
+Removing an empty line .
+https://github.com/wordpress-mobile/WordPress-Android.git
+
