@@ -148,28 +148,39 @@ def main(train_diff_file :str, train_msg_file :str, train_repos_file :str,
             cnt = cnt + 1
     print ("Number of known exc_nngen repos similar to the test repos: " + str(cnt))
 
-def compute_bleu_scores():
-    nngen_repos = load_data("./files/data/nngen.test.repos")
+def compute_bleu_scores(algorithm :str):
+    algo_repos = load_data("./files/data/" + algorithm + ".test.repos")
     test_repos = load_data("./files/data/test.projectIds")
-    nngen_msgs = load_data("./files/data/nngen.test.msg")
+    algo_msgs = load_data("./files/data/" + algorithm + ".test.msg")
     test_msgs = load_data("./files/data/test.msg")
     same_repo_cnt = 0
     same_bleu_sum = 0
     different_repo_cnt = 0
     different_bleu_sum = 0
-    for i in range(len(nngen_msgs)):
-        bleu = sentence_bleu([nngen_msgs[i].split()], test_msgs[i].split())
-        if nngen_repos[i] == test_repos[i]:
+    unknown_repo_cnt = 0
+    unknown_bleu_sum = 0
+    all_repo_cnt = 0
+    all_bleu_sum = 0
+    for i in range(len(algo_msgs)):
+        bleu = sentence_bleu([test_msgs[i].split()], algo_msgs[i].split())
+        all_repo_cnt = all_repo_cnt + 1
+        all_bleu_sum = all_bleu_sum + bleu
+        if test_repos[i] == 'UNKNOWN':
+            unknown_repo_cnt = unknown_repo_cnt + 1
+            unknown_bleu_sum = unknown_bleu_sum + bleu
+        elif algo_repos[i] == test_repos[i]:
             same_repo_cnt = same_repo_cnt + 1
             same_bleu_sum = same_bleu_sum + bleu
         else:
             different_repo_cnt = different_repo_cnt + 1
             different_bleu_sum = different_bleu_sum + bleu
-    print("avg bleu for messages selected from the same,different repos: " 
+    print("avg bleu for messages selected from the same,different,all,unknown repos: " 
           + str(same_bleu_sum / same_repo_cnt) + "," 
-          + str(different_bleu_sum / different_repo_cnt))
+          + str(different_bleu_sum / different_repo_cnt) + ","
+          + str(all_bleu_sum / all_repo_cnt) + "," 
+          + str(unknown_bleu_sum / unknown_repo_cnt))
 
 if __name__ == "__main__":
     fire.Fire({
-        'main':main   
+        'main':compute_bleu_scores("nngen")   
     })
