@@ -120,33 +120,33 @@ def main(train_diff_file :str, train_msg_file :str, train_repos_file :str,
 
 
 
-    test_repos = load_data("./files/data/test.projectIds")
-    unknown_test_repos = 0
-    for i in range(len(test_repos)):
-        if test_repos[i] == 'UNKNOWN':
-            unknown_test_repos = unknown_test_repos + 1
-    print ("Number of known test repos: " + str(len(test_repos) - unknown_test_repos))
-    
-    nngen_repos = load_data("./files/data/nngen.test.repos")
-    cnt = 0
-    for i in range(len(test_repos)):
-        if nngen_repos[i] == test_repos[i] and nngen_repos[i] != 'UNKNOWN':
-            cnt = cnt + 1
-    print ("Number of known nngen repos similar to the test repos: " + str(cnt))
-    
-    inc_repos = load_data("./files/data/inc_nngen.test.repos")
-    cnt = 0
-    for i in range(len(test_repos)):
-        if inc_repos[i] == test_repos[i] and inc_repos[i] != 'UNKNOWN':
-            cnt = cnt + 1
-    print ("Number of known inc_nngen repos similar to the test repos: " + str(cnt))
-    
-    exc_repos = load_data("./files/data/exc_nngen.test.repos")
-    cnt = 0
-    for i in range(len(test_repos)):
-        if exc_repos[i] == test_repos[i] and exc_repos[i] != 'UNKNOWN':
-            cnt = cnt + 1
-    print ("Number of known exc_nngen repos similar to the test repos: " + str(cnt))
+#     test_repos = load_data("./files/data/test.projectIds")
+#     unknown_test_repos = 0
+#     for i in range(len(test_repos)):
+#         if test_repos[i] == 'UNKNOWN':
+#             unknown_test_repos = unknown_test_repos + 1
+#     print ("Number of known test repos: " + str(len(test_repos) - unknown_test_repos))
+#     
+#     nngen_repos = load_data("./files/data/nngen.test.repos")
+#     cnt = 0
+#     for i in range(len(test_repos)):
+#         if nngen_repos[i] == test_repos[i] and nngen_repos[i] != 'UNKNOWN':
+#             cnt = cnt + 1
+#     print ("Number of known nngen repos similar to the test repos: " + str(cnt))
+#     
+#     inc_repos = load_data("./files/data/inc_nngen.test.repos")
+#     cnt = 0
+#     for i in range(len(test_repos)):
+#         if inc_repos[i] == test_repos[i] and inc_repos[i] != 'UNKNOWN':
+#             cnt = cnt + 1
+#     print ("Number of known inc_nngen repos similar to the test repos: " + str(cnt))
+#     
+#     exc_repos = load_data("./files/data/exc_nngen.test.repos")
+#     cnt = 0
+#     for i in range(len(test_repos)):
+#         if exc_repos[i] == test_repos[i] and exc_repos[i] != 'UNKNOWN':
+#             cnt = cnt + 1
+#     print ("Number of known exc_nngen repos similar to the test repos: " + str(cnt))
 
 def compute_bleu_scores(algorithm :str):
     algo_repos = load_data("./files/data/" + algorithm + ".test.repos")
@@ -182,5 +182,5 @@ def compute_bleu_scores(algorithm :str):
 
 if __name__ == "__main__":
     fire.Fire({
-        'main':compute_bleu_scores("nngen")   
+        'main':main 
     })
