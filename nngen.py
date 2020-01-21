@@ -182,5 +182,5 @@ def compute_bleu_scores(algorithm :str):
 
 if __name__ == "__main__":
     fire.Fire({
-        'main':main 
+        'main':main
     })

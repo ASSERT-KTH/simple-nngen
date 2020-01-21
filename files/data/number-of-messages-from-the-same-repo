@@ -3,5 +3,5 @@ UNKNOWN repos are excluded:
 
 Number of known test repos: 2469
 Number of known nngen repos similar to the test repos: 1520
-Number of known inc_nngen repos similar to the test repos: 2447
+Number of known simple_nngen repos similar to the test repos: 2447
 Number of known exc_nngen repos similar to the test repos: 0

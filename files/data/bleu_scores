@@ -1,9 +1,9 @@
 on cleaned dataset:
-including_nngen: BLEU = 16.53, 27.8/17.3/13.8/12.1 (BP=0.982, ratio=0.983, hyp_len=17164, ref_len=17469)
+simple_nngen: BLEU = 16.53, 27.8/17.3/13.8/12.1 (BP=0.982, ratio=0.983, hyp_len=17164, ref_len=17469)
 excluding_nngen: BLEU = 3.39, 12.2/3.8/2.5/1.9 (BP=0.880, ratio=0.886, hyp_len=15486, ref_len=17469)
 nngen: BLEU = 16.41, 27.6/16.8/13.4/11.7 (BP=1.000, ratio=1.004, hyp_len=17546, ref_len=17469)
 
 on filtered dataset:
-including_nngen: BLEU = 17.64, 28.8/18.1/14.5/12.8 (BP=1.000, ratio=1.004, hyp_len=12073, ref_len=12025)
+simple_nngen: BLEU = 17.64, 28.8/18.1/14.5/12.8 (BP=1.000, ratio=1.004, hyp_len=12073, ref_len=12025)
 excluding_nngen: BLEU = 2.68, 10.8/2.9/1.9/1.7 (BP=0.848, ratio=0.858, hyp_len=10321, ref_len=12025)
 nngen: BLEU = 17.06, 28.5/17.7/14.1/12.5 (BP=0.990, ratio=0.990, hyp_len=11905, ref_len=12025)
