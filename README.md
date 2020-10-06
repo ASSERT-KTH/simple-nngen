@@ -1,5 +1,7 @@
 # Simple-NNGen + Data
 
+This repository contains the code and data for paper [On the Relevance of Cross-project Learning with Nearest Neighbours for Commit Message Generation](http://arxiv.org/pdf/2010.01924) ([doi:10.1145/3387940.3391488](https://doi.org/10.1145/3387940.3391488))
+
 nngen.py file at the root folder contains implementation of Simple-NNGen & EXC-NNGen.
 
 The content of the files in "files/data" is described in the following table.
